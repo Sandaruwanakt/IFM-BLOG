@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Global Finance Insights</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
   <style>
     :root {
       --primary: #005fa3;
@@ -17,418 +28,599 @@
       --dark: #212529;
       --gray: #6c757d;
       --light-gray: #e9ecef;
+      --shadow-light: rgba(0, 0, 0, 0.06);
     }
-    
+
+    /* Reset */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
+
     body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
+      font-family: "Inter", sans-serif;
+      background-color: var(--light);
       color: var(--dark);
-      background-color: #f8fafc;
+      line-height: 1.65;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding-bottom: 3rem;
     }
-    
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 2rem 1rem 4rem;
     }
-    
+
+    /* Header */
     header {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
+      animation: fadeInDown 0.7s ease forwards;
+      opacity: 0;
     }
-    
-    h1 {
+
+    header h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
       color: var(--primary-dark);
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       position: relative;
       display: inline-block;
     }
-    
-    h1::after {
+
+    header h1::after {
       content: "";
       position: absolute;
-      bottom: -10px;
+      bottom: -14px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
+      width: 110px;
+      height: 5px;
       background: var(--accent);
-      border-radius: 2px;
+      border-radius: 3px;
+      box-shadow: 0 0 8px var(--accent);
     }
-    
+
+    header p {
+      color: var(--gray);
+      font-size: 1.15rem;
+      font-weight: 400;
+      max-width: 720px;
+      margin: 0 auto;
+      font-style: italic;
+    }
+
+    /* Intro Card */
     .intro-card {
       background: white;
-      padding: 2.5rem;
-      border-radius: 12px;
-      margin-bottom: 3rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 15px 35px var(--shadow-light);
       position: relative;
       overflow: hidden;
+      margin-bottom: 4rem;
+      animation: fadeInUp 0.7s ease 0.2s forwards;
+      opacity: 0;
     }
-    
+
     .intro-card::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
-      width: 5px;
+      width: 6px;
       height: 100%;
       background: var(--accent);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 0 12px var(--accent);
+      transition: background 0.3s ease;
     }
-    
+
     .intro-card p {
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
+      margin-bottom: 1.7rem;
+      font-size: 1.18rem;
+      color: var(--dark);
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .intro-card strong {
+      color: var(--primary-dark);
+    }
+
+    .mission-list {
+      margin: 2rem 0 2.8rem 1.5rem;
+      list-style: none;
+      font-size: 1.15rem;
       color: var(--dark);
     }
-    
-    .mission-list {
-      margin: 1.5rem 0;
-      padding-left: 1.5rem;
-    }
-    
+
     .mission-list li {
-      margin-bottom: 1rem;
       position: relative;
-      padding-left: 1.5rem;
+      margin-bottom: 1.2rem;
+      padding-left: 2.2rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
-    
+
     .mission-list li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: bold;
+      content: "✔";
       position: absolute;
       left: 0;
+      top: 2px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-shadow: 0 0 2px var(--accent);
     }
-    
+
+    .mission-list li:hover {
+      color: var(--accent);
+    }
+
+    /* Back Button */
     .back-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
+      gap: 0.75rem;
+      padding: 0.85rem 2rem;
       background: var(--primary);
       color: white;
+      font-weight: 600;
       border-radius: 50px;
+      box-shadow: 0 8px 15px rgba(0, 95, 163, 0.35);
       text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      margin-top: 1rem;
+      font-size: 1.1rem;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none;
+      cursor: pointer;
     }
-    
-    .back-btn:hover {
+
+    .back-btn i {
+      font-size: 1.3rem;
+    }
+
+    .back-btn:hover,
+    .back-btn:focus {
       background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 25px rgba(0, 51, 102, 0.55);
+      transform: translateY(-3px);
+      outline: none;
     }
-    
+
+    /* Team Section */
     .team-section {
       text-align: center;
-      margin: 4rem 0;
+      margin: 0 auto;
+      animation: fadeInUp 0.7s ease 0.4s forwards;
+      opacity: 0;
+      max-width: 1100px;
     }
-    
+
     .section-title {
-      font-size: 2rem;
+      font-size: 2.25rem;
+      font-weight: 700;
       color: var(--primary-dark);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.4rem;
       position: relative;
       display: inline-block;
     }
-    
+
     .section-title::after {
       content: "";
       position: absolute;
-      bottom: -10px;
+      bottom: -12px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
+      width: 90px;
+      height: 4px;
       background: var(--accent);
+      border-radius: 3px;
+      box-shadow: 0 0 8px var(--accent);
     }
-    
+
     .section-subtitle {
       color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto 2rem;
+      max-width: 720px;
+      margin: 0 auto 3rem;
       font-size: 1.1rem;
+      font-style: italic;
     }
-    
+
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      padding-bottom: 1rem;
     }
-    
+
+    /* Member Card */
     .member-card {
       background: white;
-      border-radius: 12px;
+      border-radius: 16px;
+      box-shadow: 0 15px 30px var(--shadow-light);
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      cursor: default;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
-    
+
     .member-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
     }
-    
+
     .member-img-container {
-      height: 280px;
+      height: 300px;
+      background: var(--light-gray);
       overflow: hidden;
       position: relative;
-      background: var(--light-gray);
+      border-bottom: 3px solid var(--accent);
+      border-radius: 16px 16px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    
+
     .member-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
       transition: transform 0.5s ease;
+      user-select: none;
     }
-    
+
     .member-card:hover .member-img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
-    
+
+    /* Fallback for images */
+    .img-fallback {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: var(--gray);
+      font-size: 3rem;
+      gap: 0.6rem;
+      padding: 1rem;
+      text-align: center;
+      user-select: none;
+    }
+
+    .img-fallback p {
+      font-size: 1rem;
+      color: var(--gray);
+      font-weight: 600;
+    }
+
     .member-details {
-      padding: 1.5rem;
+      padding: 1.8rem 1.5rem 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       text-align: center;
     }
-    
+
     .member-name {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--primary-dark);
       margin-bottom: 0.25rem;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      user-select: text;
     }
-    
+
     .member-id {
       color: var(--accent);
-      font-weight: 500;
-      font-size: 0.95rem;
-      letter-spacing: 0.5px;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.6px;
+      user-select: text;
     }
-    
+
+    /* Social Links */
     .social-links {
+      margin-top: 1.4rem;
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 1.4rem;
+      user-select: none;
     }
-    
+
     .social-link {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--light-gray);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--primary-dark);
+      font-size: 1.15rem;
       transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
     }
-    
-    .social-link:hover {
+
+    .social-link:hover,
+    .social-link:focus {
       background: var(--accent);
       color: white;
-      transform: translateY(-3px);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 18px var(--accent);
+      outline: none;
+      cursor: pointer;
     }
-    
-    /* Image fallback styling */
-    .img-fallback {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      color: var(--gray);
-      font-size: 3rem;
-    }
-    
+
+    /* Responsive */
     @media (max-width: 768px) {
       .container {
-        padding: 1.5rem;
+        padding: 1.5rem 1rem 3rem;
       }
-      
-      h1 {
+
+      header h1 {
         font-size: 2rem;
       }
-      
+
       .intro-card {
-        padding: 1.5rem;
+        padding: 2rem 1.8rem;
       }
-      
+
+      .mission-list {
+        font-size: 1.05rem;
+        margin-left: 1.2rem;
+      }
+
       .team-grid {
         grid-template-columns: 1fr;
+        gap: 1.8rem;
       }
-      
+
       .member-img-container {
-        height: 320px;
+        height: 340px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container" role="main" aria-label="About Global Finance Insights">
     <header>
       <h1>About Global Finance Insights</h1>
-      <p style="color: var(--gray); max-width: 700px; margin: 0 auto;">Your trusted source for international financial market analysis</p>
+      <p>Your trusted source for international financial market analysis</p>
     </header>
-    
-    <div class="intro-card">
-      <p>Welcome to <strong>Global Finance Insights</strong>, a premier platform for comprehensive analysis of international financial markets and economic developments, created by a team of finance students from the University of Moratuwa.</p>
-      
-      <p>This initiative was developed as part of our IM4261 International Financial Management course, where we combine academic theory with real-world financial analysis to deliver insightful weekly market commentary.</p>
-      
-      <p>Our mission:</p>
+
+    <section class="intro-card" aria-labelledby="mission-heading">
+      <p>
+        Welcome to <strong>Global Finance Insights</strong>, a premier platform for
+        comprehensive analysis of international financial markets and economic developments,
+        created by a team of finance students from the University of Moratuwa.
+      </p>
+
+      <p>
+        This initiative was developed as part of our IM4261 International Financial Management
+        course, where we combine academic theory with real-world financial analysis to
+        deliver insightful weekly market commentary.
+      </p>
+
+      <h2 id="mission-heading" style="color: var(--primary-dark); margin-bottom: 1rem;">
+        Our Mission:
+      </h2>
       <ul class="mission-list">
         <li>Deliver data-driven analysis of global financial trends</li>
         <li>Connect classroom concepts with current market realities</li>
         <li>Enhance practical financial analysis skills</li>
         <li>Provide accessible insights for students and professionals</li>
       </ul>
-      
-      <p>All content is meticulously researched from authoritative sources including Reuters, IMF reports, and central bank publications, ensuring accurate and timely market perspectives.</p>
-      
-      <a href="index.html" class="back-btn">
-        <i class="fas fa-arrow-left"></i> Back to Home
+
+      <p>
+        All content is meticulously researched from authoritative sources including Reuters,
+        IMF reports, and central bank publications, ensuring accurate and timely market perspectives.
+      </p>
+
+      <a href="index.html" class="back-btn" aria-label="Back to Home Page">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Home
       </a>
-    </div>
-    
-    <div class="team-section">
-      <h2 class="section-title">Our Team</h2>
-      <p class="section-subtitle">Meet the talented students from the Department of Management of Technology behind this initiative</p>
-      
+    </section>
+
+    <section class="team-section" aria-labelledby="team-heading">
+      <h2 id="team-heading" class="section-title">Our Team</h2>
+      <p class="section-subtitle">
+        Meet the talented students from the Department of Industrial Management behind this initiative
+      </p>
+
       <div class="team-grid">
         <!-- Member 1 -->
-        <div class="member-card">
+        <article class="member-card" role="group" aria-label="Team member Dilakshi Jayakaduwa">
           <div class="member-img-container">
-            <img src="1.jfif" alt="Dilakshi Jayakaduwa" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+            <img
+              src="1.jfif"
+              alt="Photo of Dilakshi Jayakaduwa"
+              class="member-img"
+              onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\' aria-hidden=\'true\'></i><p>Dilakshi Jayakaduwa</p></div>'"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="member-details">
             <h3 class="member-name">Dilakshi Jayakaduwa</h3>
-            <div class="member-id">216052U</div>
-            <div class="social-links">
-              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
+            <p class="member-id">216052U</p>
+            <nav class="social-links" aria-label="Social media links for Dilakshi Jayakaduwa">
+              <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </nav>
           </div>
-        </div>
-        
+        </article>
+
         <!-- Member 2 -->
-        <div class="member-card">
+        <article class="member-card" role="group" aria-label="Team member Lakshan Jayarathna">
           <div class="member-img-container">
-            <img src="2.jpg" alt="Lakshan Jayarathna" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+            <img
+              src="2.jpg"
+              alt="Photo of Lakshan Jayarathna"
+              class="member-img"
+              onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\' aria-hidden=\'true\'></i><p>Lakshan Jayarathna</p></div>'"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="member-details">
             <h3 class="member-name">Lakshan Jayarathna</h3>
-            <div class="member-id">216053A</div>
-            <div class="social-links">
-              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
+            <p class="member-id">216053A</p>
+            <nav class="social-links" aria-label="Social media links for Lakshan Jayarathna">
+              <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </nav>
           </div>
-        </div>
-        
+        </article>
+
         <!-- Member 3 -->
-        <div class="member-card">
+        <article class="member-card" role="group" aria-label="Team member Hiruni Jayawickrama">
           <div class="member-img-container">
-            <img src="3.jpeg" alt="Hiruni Jayawickrama" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+            <img
+              src="3.jpeg"
+              alt="Photo of Hiruni Jayawickrama"
+              class="member-img"
+              onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\' aria-hidden=\'true\'></i><p>Hiruni Jayawickrama</p></div>'"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="member-details">
             <h3 class="member-name">Hiruni Jayawickrama</h3>
-            <div class="member-id">216059X</div>
-            <div class="social-links">
-              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
+            <p class="member-id">216059X</p>
+            <nav class="social-links" aria-label="Social media links for Hiruni Jayawickrama">
+              <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </nav>
           </div>
-        </div>
-        
+        </article>
+
         <!-- Member 4 -->
-        <div class="member-card">
+        <article class="member-card" role="group" aria-label="Team member Sadani Jayasundara">
           <div class="member-img-container">
-            <img src="4.jpeg" alt="Sadani Jayasundara" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+            <img
+              src="4.jpeg"
+              alt="Photo of Sadani Jayasundara"
+              class="member-img"
+              onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\' aria-hidden=\'true\'></i><p>Sadani Jayasundara</p></div>'"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="member-details">
             <h3 class="member-name">Sadani Jayasundara</h3>
-            <div class="member-id">216055G</div>
-            <div class="social-links">
-              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
+            <p class="member-id">216055G</p>
+            <nav class="social-links" aria-label="Social media links for Sadani Jayasundara">
+              <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </nav>
           </div>
-        </div>
-        
+        </article>
+
         <!-- Member 5 -->
-        <div class="member-card">
+        <article class="member-card" role="group" aria-label="Team member Harini Jayawardana">
           <div class="member-img-container">
-            <img src="5.jpeg" alt="Harini Jayawardana" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+            <img
+              src="5.jpeg"
+              alt="Photo of Harini Jayawardana"
+              class="member-img"
+              onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\' aria-hidden=\'true\'></i><p>Harini Jayawardana</p></div>'"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="member-details">
             <h3 class="member-name">Harini Jayawardana</h3>
-            <div class="member-id">216058T</div>
-            <div class="social-links">
-              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
+            <p class="member-id">216058T</p>
+            <nav class="social-links" aria-label="Social media links for Harini Jayawardana">
+              <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </nav>
           </div>
-        </div>
-        
+        </article>
+
         <!-- Member 6 -->
-        <div class="member-card">
+        <article class="member-card" role="group" aria-label="Team member Dilaksi Jeyakumar">
           <div class="member-img-container">
-            <img src="6.jpeg" alt="Dilaksi Jeyakumar" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+            <img
+              src="6.jpeg"
+              alt="Photo of Dilaksi Jeyakumar"
+              class="member-img"
+              onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\' aria-hidden=\'true\'></i><p>Dilaksi Jeyakumar</p></div>'"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="member-details">
             <h3 class="member-name">Dilaksi Jeyakumar</h3>
-            <div class="member-id">216060R</div>
-            <div class="social-links">
-              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
+            <p class="member-id">216060R</p>
+            <nav class="social-links" aria-label="Social media links for Dilaksi Jeyakumar">
+              <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </nav>
           </div>
-        </div>
+        </article>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <!-- Font Awesome JS -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+    crossorigin="anonymous"
+  ></script>
+
   <script>
-    // Image loading fallback
-    document.addEventListener('DOMContentLoaded', function() {
-      const images = document.querySelectorAll('.member-img');
-      images.forEach(img => {
-        img.onerror = function() {
+    // Image loading fallback improved
+    document.addEventListener("DOMContentLoaded", function () {
+      const images = document.querySelectorAll(".member-img");
+      images.forEach((img) => {
+        img.onerror = function () {
           this.parentElement.innerHTML = `
-            <div class="img-fallback">
-              <i class="fas fa-user-graduate"></i>
-              <p>${this.alt}</p>
+            <div class="img-fallback" role="img" aria-label="${this.alt}">
+              <i class="fas fa-user-graduate" aria-hidden="true"></i>
+              <p>${this.alt.replace("Photo of ", "")}</p>
             </div>
           `;
         };
-        
-        // Preload images
-        const imgSrc = img.getAttribute('src');
-        if (imgSrc) {
-          const tempImg = new Image();
-          tempImg.src = imgSrc;
-        }
       });
     });
   </script>
