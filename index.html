@@ -47,15 +47,19 @@
       overflow-x: hidden;
     }
     
-    /* Typography */
+    /* Improved Typography */
     h1, h2, h3, h4, h5 {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       line-height: 1.2;
+      letter-spacing: -0.25px;
     }
     
     p {
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.7;
     }
     
     a {
@@ -64,7 +68,7 @@
       transition: var(--transition);
     }
     
-    /* Header */
+    /* Enhanced Header */
     header {
       background: linear-gradient(135deg, var(--primary-dark), var(--primary));
       color: white;
@@ -245,7 +249,7 @@
       padding: 0 2rem;
     }
     
-    /* Section titles */
+    /* Improved Section titles */
     .section-title {
       text-align: center;
       margin-bottom: 4rem;
@@ -258,6 +262,7 @@
       display: inline-block;
       position: relative;
       padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
     }
     
     .section-title h2::after {
@@ -280,7 +285,7 @@
       line-height: 1.7;
     }
     
-    /* Featured section */
+    /* Enhanced Featured section */
     .featured-section {
       background: linear-gradient(135deg, #f5f7fa, #e9ecef);
       padding: 5rem 2rem;
@@ -385,22 +390,20 @@
       font-size: 1.1rem;
       line-height: 1.7;
     }
+    
     .meta-info {
-  display: flex;
-  gap: 1rem;
-  margin: 0.75rem 0;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.meta-info i {
-  margin-right: 5px;
-  color: #007BFF;
-}
-
-
-
-
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--gray);
+    }
+    
+    .meta-info i {
+      margin-right: 8px;
+      color: var(--primary);
+    }
+    
     .read-more {
       display: inline-flex;
       align-items: center;
@@ -431,11 +434,12 @@
       transform: translate(5px, -50%);
     }
     
-    /* Blog grid */
+    /* Enhanced Blog grid */
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 2.5rem;
+      margin-top: 2rem;
     }
     
     .blog-card {
@@ -453,6 +457,7 @@
     .blog-card:hover {
       transform: translateY(-10px);
       box-shadow: var(--card-shadow-hover);
+      border-color: rgba(0, 95, 163, 0.2);
     }
     
     .card-image {
@@ -533,6 +538,7 @@
       color: white;
       padding: 3rem 2rem 2rem;
       position: relative;
+      margin-top: 5rem;
     }
     
     footer::before {
@@ -609,6 +615,7 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      margin-bottom: 0.75rem;
     }
     
     .member-avatar {
@@ -628,6 +635,7 @@
     .member-info h5 {
       font-size: 0.9rem;
       margin-bottom: 0.2rem;
+      color: white;
     }
     
     .member-info p {
@@ -639,7 +647,7 @@
     .social-links {
       display: flex;
       gap: 0.75rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
     
     .social-links a {
@@ -846,6 +854,11 @@
       .footer-container {
         grid-template-columns: 1fr;
       }
+      
+      .meta-info {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
 
     /* Chatwoot Customization */
@@ -906,29 +919,28 @@
     </div>
   </nav>
   
-<main>
-  <section class="featured-section">
-    <div class="featured-container">
-      <div class="featured-card">
-        <div class="featured-image">
-          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Featured Analysis">
-        </div>
-        <div class="featured-content">
-          <span class="featured-tag">Featured Report</span>
-          <h3>2025 Global Financial Outlook: Navigating Uncertainty</h3>
-          <p>Our comprehensive analysis of the key financial trends, risks, and opportunities shaping the global economy in 2025. Understand the forces driving markets and how to position your investments in this complex economic landscape.</p>
-          
-          <!-- Author and Week Info -->
-          <div class="meta-info">
-            <span class="author"><i class="fas fa-user"></i> By Sandaruwan Tharindu</span>
-            <span class="week"><i class="fas fa-calendar-week"></i> Week 1</span>
+  <main>
+    <section class="featured-section">
+      <div class="featured-container">
+        <div class="featured-card">
+          <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Featured Analysis">
           </div>
+          <div class="featured-content">
+            <span class="featured-tag">Featured Report</span>
+            <h3>2025 Global Financial Outlook: Navigating Uncertainty</h3>
+            <p>Our comprehensive analysis of the key financial trends, risks, and opportunities shaping the global economy in 2025. Understand the forces driving markets and how to position your investments in this complex economic landscape.</p>
+            
+            <div class="meta-info">
+              <span><i class="fas fa-user"></i> Dilakshi Jayakaduwa</span>
+              <span><i class="fas fa-calendar-week"></i> Week 1</span>
+            </div>
 
-          <a href="blog1.html" class="read-more">Read Featured Analysis <i class="fas fa-arrow-right"></i></a>
+            <a href="blog1.html" class="read-more">Read Featured Analysis <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
     
     <section>
       <div class="section-title">
@@ -939,12 +951,12 @@
       <div class="blog-grid">
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">Currency Markets</div>
+            <div class="card-tag">Week 01 </div>
             <img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Currency exchange">
           </div>
           <div class="card-content">
-            <h3>Global Currency Volatility: Trends and Forecasts</h3>
-            <p>Examining the recent fluctuations in major currency pairs and what it means for international trade and investments in the current economic climate.</p>
+            <h3> </h3>
+            <p>      </p>
             <a href="blog1.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> June 15, 2025</span>
@@ -955,12 +967,12 @@
         
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">IMF</div>
+            <div class="card-tag"> Week 02 </div>
             <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="IMF meeting">
           </div>
           <div class="card-content">
-            <h3>IMF and Sri Lanka – Breaking Down the New Deal</h3>
-            <p>Analysis of the recent IMF agreement with Sri Lanka and its implications for the country's economic recovery and long-term financial stability.</p>
+            <h3>  </h3>
+            <p> </p>
             <a href="blog2.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> June 8, 2025</span>
@@ -971,12 +983,12 @@
         
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">Monetary Policy</div>
+            <div class="card-tag"> Week 03 </div>
             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Federal Reserve">
           </div>
           <div class="card-content">
-            <h3>Fed Interest Rate Hikes: Global Ripple Effects</h3>
-            <p>How the Federal Reserve's recent rate decisions are impacting emerging markets and global capital flows in the current financial year.</p>
+            <h3> </h3>
+            <p> </p>
             <a href="blog3.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> June 1, 2025</span>
@@ -987,12 +999,12 @@
         
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">Emerging Markets</div>
+            <div class="card-tag">Week 04</div>
             <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="African economy">
           </div>
           <div class="card-content">
-            <h3>Sovereign Debt Crisis in Africa: Causes and Solutions</h3>
-            <p>Exploring the growing debt burden across African nations and potential pathways to financial stability in the region.</p>
+            <h3> </h3>
+            <p> </p>
             <a href="blog4.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> May 25, 2025</span>
@@ -1003,12 +1015,12 @@
         
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">Investment</div>
+            <div class="card-tag">Week 05</div>
             <img src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="South Asia economy">
           </div>
           <div class="card-content">
-            <h3>FDI Trends in South Asia: Opportunities and Risks</h3>
-            <p>Analyzing foreign direct investment patterns across South Asian economies in the post-pandemic era and emerging opportunities.</p>
+            <h3> </h3>
+            <p> </p>
             <a href="blog5.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> May 18, 2025</span>
@@ -1019,12 +1031,12 @@
         
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">Digital Finance</div>
+            <div class="card-tag">Week 06</div>
             <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Digital currency">
           </div>
           <div class="card-content">
-            <h3>Digital Currencies and Their Impact on Forex Markets</h3>
-            <p>How central bank digital currencies and cryptocurrencies are reshaping traditional foreign exchange markets and global finance.</p>
+            <h3> </h3>
+            <p> </p>
             <a href="blog6.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> May 11, 2025</span>
@@ -1044,12 +1056,12 @@
       <div class="blog-grid">
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">Trade</div>
+            <div class="card-tag">Week 07</div>
             <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Trade deficit">
           </div>
           <div class="card-content">
-            <h3>Trade Deficits and Exchange Rate Dynamics</h3>
-            <p>How persistent trade imbalances influence currency valuations and what policymakers can do about it in the current global context.</p>
+            <h3> </h3>
+            <p> </p>
             <a href="blog7.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> May 4, 2025</span>
@@ -1060,12 +1072,12 @@
         
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">Eurozone</div>
+            <div class="card-tag">Week 08</div>
             <img src="https://images.unsplash.com/photo-1500380804539-4e1e8c1e7118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Eurozone">
           </div>
           <div class="card-content">
-            <h3>Eurozone Inflation and Its Regional Impact</h3>
-            <p>Analyzing the uneven effects of inflation across Eurozone countries and ECB policy responses to economic challenges.</p>
+            <h3> </h3>
+            <p> </p>
             <a href="blog8.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> April 27, 2025</span>
@@ -1076,12 +1088,12 @@
         
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">Middle East</div>
+            <div class="card-tag">Week 09</div>
             <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Middle East">
           </div>
           <div class="card-content">
-            <h3>Currency Pegs in the Middle East: Stability vs. Flexibility</h3>
-            <p>Examining the pros and cons of fixed exchange rate regimes in Gulf Cooperation Council countries in the current oil market.</p>
+            <h3> </h3>
+            <p> </p>
             <a href="blog9.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> April 20, 2025</span>
@@ -1092,12 +1104,12 @@
         
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">Sri Lanka</div>
+            <div class="card-tag">Week 10</div>
             <img src="https://images.unsplash.com/photo-1580619305218-842c54a002ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Sri Lanka">
           </div>
           <div class="card-content">
-            <h3>Sri Lanka – CBSL Annual Report Review</h3>
-            <p>Key takeaways from the Central Bank of Sri Lanka's latest annual report and economic outlook for the coming years.</p>
+            <h3> </h3>
+            <p> </p>
             <a href="blog10.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> April 13, 2025</span>
@@ -1108,12 +1120,12 @@
         
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">Emerging Markets</div>
+            <div class="card-tag">Week 11</div>
             <img src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Emerging markets">
           </div>
           <div class="card-content">
-            <h3>Capital Flows to Emerging Markets: 2025 Trends</h3>
-            <p>Identifying the most attractive emerging markets for portfolio investment in the current year and sector opportunities.</p>
+            <h3> </h3>
+            <p> </p>
             <a href="blog11.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> April 6, 2025</span>
@@ -1124,12 +1136,12 @@
         
         <article class="blog-card">
           <div class="card-image">
-            <div class="card-tag">China</div>
+            <div class="card-tag">Week 12</div>
             <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="China">
           </div>
           <div class="card-content">
-            <h3>China's Evolving Strategy in Global Trade Wars</h3>
-            <p>How China is adapting its economic policies in response to ongoing trade tensions with Western nations and shifting alliances.</p>
+            <h3> </h3>
+            <p> </p>
             <a href="blog12.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
             <div class="card-meta">
               <span><i class="far fa-calendar-alt"></i> March 30, 2025</span>
@@ -1145,7 +1157,7 @@
     <div class="footer-container">
       <div class="footer-col">
         <h4>Global Finance Insights</h4>
-        <p>Providing expert analysis on international financial markets, currencies, and economic trends since 2018.</p>
+        <p>Bringing you weekly perspectives on the latest global financial developments — simplified, analyzed, and written by future finance professionals. Stay informed. Stay connected.</p>
         <div class="social-links">
           <a href="#"><i class="fab fa-twitter"></i></a>
           <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -1163,31 +1175,31 @@
           <li><a href="about.html">About Us</a></li>
         </ul>
       </div>
-<div class="footer-col">
-  <h4>Our Team</h4>
-  <div class="team-members">
-    <div class="team-member">
-      <h5><i class="fas fa-user-graduate"></i> Dilakshi Jayakaduwa</h5>
+      
+      <div class="footer-col">
+        <h4>Our Team</h4>
+        <div class="team-members">
+          <div class="team-member">
+            <h5><i class="fas fa-user-graduate"></i> Dilakshi Jayakaduwa</h5>
+          </div>
+          <div class="team-member">
+            <h5><i class="fas fa-user-graduate"></i> Lakshan Jayarathna</h5>
+          </div>
+          <div class="team-member">
+            <h5><i class="fas fa-user-graduate"></i> Hiruni Jayawickrama</h5>
+          </div>
+          <div class="team-member">
+            <h5><i class="fas fa-user-graduate"></i> Sadani Jayasundara</h5>
+          </div>
+          <div class="team-member">
+            <h5><i class="fas fa-user-graduate"></i> Harini Jayawardana</h5>
+          </div>
+          <div class="team-member">
+            <h5><i class="fas fa-user-graduate"></i> Dilaksi Jeyakumar</h5>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="team-member">
-      <h5><i class="fas fa-user-graduate"></i> Lakshan Jayarathna</h5>
-    </div>
-    <div class="team-member">
-      <h5><i class="fas fa-user-graduate"></i> Hiruni Jayawickrama</h5>
-    </div>
-    <div class="team-member">
-      <h5><i class="fas fa-user-graduate"></i> Sadani Jayasundara</h5>
-    </div>
-    <div class="team-member">
-      <h5><i class="fas fa-user-graduate"></i> Harini Jayawardana</h5>
-    </div>
-    <div class="team-member">
-      <h5><i class="fas fa-user-graduate"></i> Dilaksi Jeyakumar</h5>
-    </div>
-  </div>
-</div>
-
-
     
     <div class="copyright">
       <p>&copy; 2025 Global Finance Insights. All rights reserved.</p>
