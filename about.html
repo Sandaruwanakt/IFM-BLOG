@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Global Finance Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #005fa3;
+      --primary-dark: #003366;
+      --accent: #ff6b35;
+      --light: #f5f7fa;
+      --dark: #212529;
+      --gray: #6c757d;
+      --light-gray: #e9ecef;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: #f8fafc;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    h1 {
+      color: var(--primary-dark);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    
+    .intro-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .intro-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--accent);
+    }
+    
+    .intro-card p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      color: var(--dark);
+    }
+    
+    .mission-list {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+    
+    .mission-list li {
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .mission-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+    
+    .back-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .team-section {
+      text-align: center;
+      margin: 4rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--accent);
+    }
+    
+    .section-subtitle {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .member-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+    }
+    
+    .member-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+    
+    .member-img-container {
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+      background: var(--light-gray);
+    }
+    
+    .member-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.5s ease;
+    }
+    
+    .member-card:hover .member-img {
+      transform: scale(1.05);
+    }
+    
+    .member-details {
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    .member-name {
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 0.25rem;
+      font-size: 1.2rem;
+    }
+    
+    .member-id {
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-link {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-dark);
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Image fallback styling */
+    .img-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: var(--gray);
+      font-size: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .intro-card {
+        padding: 1.5rem;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .member-img-container {
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>About Global Finance Insights</h1>
+      <p style="color: var(--gray); max-width: 700px; margin: 0 auto;">Your trusted source for international financial market analysis</p>
+    </header>
+    
+    <div class="intro-card">
+      <p>Welcome to <strong>Global Finance Insights</strong>, a premier platform for comprehensive analysis of international financial markets and economic developments, created by a team of finance students from the University of Moratuwa.</p>
+      
+      <p>This initiative was developed as part of our IM4261 International Financial Management course, where we combine academic theory with real-world financial analysis to deliver insightful weekly market commentary.</p>
+      
+      <p>Our mission:</p>
+      <ul class="mission-list">
+        <li>Deliver data-driven analysis of global financial trends</li>
+        <li>Connect classroom concepts with current market realities</li>
+        <li>Enhance practical financial analysis skills</li>
+        <li>Provide accessible insights for students and professionals</li>
+      </ul>
+      
+      <p>All content is meticulously researched from authoritative sources including Reuters, IMF reports, and central bank publications, ensuring accurate and timely market perspectives.</p>
+      
+      <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+    
+    <div class="team-section">
+      <h2 class="section-title">Our Team</h2>
+      <p class="section-subtitle">Meet the talented students from the Department of Management of Technology behind this initiative</p>
+      
+      <div class="team-grid">
+        <!-- Member 1 -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="1.jfif" alt="Dilakshi Jayakaduwa" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+          </div>
+          <div class="member-details">
+            <h3 class="member-name">Dilakshi Jayakaduwa</h3>
+            <div class="member-id">216052U</div>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Member 2 -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="2.jpg" alt="Lakshan Jayarathna" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+          </div>
+          <div class="member-details">
+            <h3 class="member-name">Lakshan Jayarathna</h3>
+            <div class="member-id">216053A</div>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Member 3 -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="3.jpeg" alt="Hiruni Jayawickrama" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+          </div>
+          <div class="member-details">
+            <h3 class="member-name">Hiruni Jayawickrama</h3>
+            <div class="member-id">216059X</div>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Member 4 -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="4.jpeg" alt="Sadani Jayasundara" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+          </div>
+          <div class="member-details">
+            <h3 class="member-name">Sadani Jayasundara</h3>
+            <div class="member-id">216055G</div>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Member 5 -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="5.jpeg" alt="Harini Jayawardana" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+          </div>
+          <div class="member-details">
+            <h3 class="member-name">Harini Jayawardana</h3>
+            <div class="member-id">216058T</div>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Member 6 -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="6.jpeg" alt="Dilaksi Jeyakumar" class="member-img" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-user-graduate\'></i></div>'">
+          </div>
+          <div class="member-details">
+            <h3 class="member-name">Dilaksi Jeyakumar</h3>
+            <div class="member-id">216060R</div>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script>
+    // Image loading fallback
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.member-img');
+      images.forEach(img => {
+        img.onerror = function() {
+          this.parentElement.innerHTML = `
+            <div class="img-fallback">
+              <i class="fas fa-user-graduate"></i>
+              <p>${this.alt}</p>
+            </div>
+          `;
+        };
+        
+        // Preload images
+        const imgSrc = img.getAttribute('src');
+        if (imgSrc) {
+          const tempImg = new Image();
+          tempImg.src = imgSrc;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

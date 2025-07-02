@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌍 Global Finance Insights | International Financial Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #005fa3;
+      --primary-dark: #003366;
+      --secondary: #00a8e8;
+      --accent: #ff6b35;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --gray: #6c757d;
+      --light-gray: #e9ecef;
+      --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      padding: 4rem 1rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
+      opacity: 0.2;
+    }
+    
+    .header-content {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+    
+    .tagline {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      border: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+    
+    .search-input:focus {
+      outline: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .search-btn {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .search-btn:hover {
+      background: #ff5a1f;
+    }
+    
+    nav {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    main {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary-dark);
+      display: inline-block;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    
+    .section-title p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 1rem auto 0;
+    }
+    
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .blog-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .card-image {
+      height: 180px;
+      background: var(--light-gray);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .blog-card:hover .card-image img {
+      transform: scale(1.05);
+    }
+    
+    .card-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .card-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary-dark);
+    }
+    
+    .card-content p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+    
+    .read-more {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+      align-self: flex-start;
+    }
+    
+    .read-more:hover {
+      color: var(--accent);
+    }
+    
+    .read-more i {
+      margin-left: 0.5rem;
+      transition: transform 0.3s;
+    }
+    
+    .read-more:hover i {
+      transform: translateX(3px);
+    }
+    
+    .newsletter {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 1rem;
+      margin: 5rem 0;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .newsletter::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
+    }
+    
+    .newsletter-content {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .newsletter h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .newsletter p {
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-form input {
+      flex-grow: 1;
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    
+    .newsletter-form input:focus {
+      outline: none;
+    }
+    
+    .newsletter-form button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0 2rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .newsletter-form button:hover {
+      background: #ff5a1f;
+    }
+    
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 4rem 1rem 2rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-col h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+    
+    .footer-col h4::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-col ul li a {
+      color: #adb5bd;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-col ul li a:hover {
+      color: white;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #adb5bd;
+      font-size: 0.9rem;
+    }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.1rem;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .newsletter-form button {
+        padding: 1rem;
+      }
+    }
+
+    /* Chatwoot Customization */
+    .cw--button {
+      background-color: var(--primary) !important;
+      border-radius: 50px !important;
+      box-shadow: 0 4px 15px rgba(0, 95, 163, 0.3) !important;
+    }
+    
+    .cw--launcher-button {
+      width: 56px !important;
+      height: 56px !important;
+    }
+    
+    .cw--header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>🌍 Global Finance Insights</h1>
+      <p class="tagline">Expert analysis on international financial markets, currencies, and economic trends</p>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search articles, reports, and analysis...">
+        <button class="search-btn"><i class="fas fa-search"></i> Search</button>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-container">
+      <div class="logo">GLOBAL FINANCE INSIGHTS</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="analysis.html">Analysis</a>
+        <a href="https://www.cse.lk/pages/aboutus-annual-reports/aboutus-annual-reports.component.html">Annual Reports</a>
+        <a href="https://www.investing.com/">Markets</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+  
+  <main>
+    <section>
+      <div class="section-title">
+        <h2>Latest Insights</h2>
+        <p>Weekly analysis on global financial markets, currency movements, and economic developments</p>
+      </div>
+      
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Currency Markets</div>
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Currency exchange">
+          </div>
+          <div class="card-content">
+            <h3>Global Currency Volatility: Trends and Forecasts</h3>
+            <p>Examining the recent fluctuations in major currency pairs and what it means for international trade and investments.</p>
+            <a href="blog1.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 1</span>
+              <span>5 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">IMF</div>
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="IMF meeting">
+          </div>
+          <div class="card-content">
+            <h3>IMF and Sri Lanka – Breaking Down the New Deal</h3>
+            <p>Analysis of the recent IMF agreement with Sri Lanka and its implications for the country's economic recovery.</p>
+            <a href="blog2.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 2</span>
+              <span>7 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Monetary Policy</div>
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Federal Reserve">
+          </div>
+          <div class="card-content">
+            <h3>Fed Interest Rate Hikes: Global Ripple Effects</h3>
+            <p>How the Federal Reserve's recent rate decisions are impacting emerging markets and global capital flows.</p>
+            <a href="blog3.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 3</span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Emerging Markets</div>
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="African economy">
+          </div>
+          <div class="card-content">
+            <h3>Sovereign Debt Crisis in Africa: Causes and Solutions</h3>
+            <p>Exploring the growing debt burden across African nations and potential pathways to financial stability.</p>
+            <a href="blog4.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 4</span>
+              <span>8 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Investment</div>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="South Asia economy">
+          </div>
+          <div class="card-content">
+            <h3>FDI Trends in South Asia: Opportunities and Risks</h3>
+            <p>Analyzing foreign direct investment patterns across South Asian economies in the post-pandemic era.</p>
+            <a href="blog5.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 5</span>
+              <span>5 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Digital Finance</div>
+            <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Digital currency">
+          </div>
+          <div class="card-content">
+            <h3>Digital Currencies and Their Impact on Forex Markets</h3>
+            <p>How central bank digital currencies and cryptocurrencies are reshaping traditional foreign exchange markets.</p>
+            <a href="blog6.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 6</span>
+              <span>7 min read</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h3>Stay Updated with Global Finance</h3>
+        <p>Subscribe to our weekly newsletter for the latest insights delivered straight to your inbox</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+    
+    <section>
+      <div class="section-title">
+        <h2>More Insights</h2>
+        <p>Additional analysis and reports on international finance topics</p>
+      </div>
+      
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="card-content">
+            <h3>Trade Deficits and Exchange Rate Dynamics</h3>
+            <p>How persistent trade imbalances influence currency valuations and what policymakers can do about it.</p>
+            <a href="blog7.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 7</span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-content">
+            <h3>Eurozone Inflation and Its Regional Impact</h3>
+            <p>Analyzing the uneven effects of inflation across Eurozone countries and ECB policy responses.</p>
+            <a href="blog8.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 8</span>
+              <span>5 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-content">
+            <h3>Currency Pegs in the Middle East: Stability vs. Flexibility</h3>
+            <p>Examining the pros and cons of fixed exchange rate regimes in Gulf Cooperation Council countries.</p>
+            <a href="blog9.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 9</span>
+              <span>7 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-content">
+            <h3>Sri Lanka – CBSL Annual Report Review</h3>
+            <p>Key takeaways from the Central Bank of Sri Lanka's latest annual report and economic outlook.</p>
+            <a href="blog10.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 10</span>
+              <span>8 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-content">
+            <h3>Capital Flows to Emerging Markets: 2025 Trends</h3>
+            <p>Identifying the most attractive emerging markets for portfolio investment in the current year.</p>
+            <a href="blog11.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 11</span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-content">
+            <h3>China's Evolving Strategy in Global Trade Wars</h3>
+            <p>How China is adapting its economic policies in response to ongoing trade tensions with Western nations.</p>
+            <a href="blog12.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span>Week 12</span>
+              <span>7 min read</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Global Finance Insights</h4>
+        <p>Providing expert analysis on international financial markets, currencies, and economic trends since 2018.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Analysis</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Markets</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Currency Markets</a></li>
+          <li><a href="#">Monetary Policy</a></li>
+          <li><a href="#">Emerging Markets</a></li>
+          <li><a href="#">Trade Analysis</a></li>
+          <li><a href="#">Investment Trends</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> info@globalfinance.com</li>
+          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fas fa-map-marker-alt"></i> 123 Financial District, New York, NY</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 Global Finance Insights. All rights reserved. | Privacy Policy | Terms of Service</p>
+    </div>
+  </footer>
+
+  <!-- Chatwoot Live Chat Widget -->
+  <script>
+    (function(d,t) {
+      var BASE_URL="https://app.chatwoot.com";
+      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=BASE_URL+"/packs/js/sdk.js";
+      g.defer = true;
+      g.async = true;
+      s.parentNode.insertBefore(g,s);
+      g.onload=function(){
+        window.chatwootSDK.run({
+          websiteToken: 'Hkr4HuEfenWEQnVVKtjmnXXG',
+          baseUrl: BASE_URL
+        })
+      }
+    })(document,"script");
+  </script>
+</body>
+</html>

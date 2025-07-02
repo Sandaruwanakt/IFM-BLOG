@@ -1,0 +1,71 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.site-header {
+  background: #003366;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.blog-list {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.blog-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog-list li {
+  margin-bottom: 1rem;
+}
+
+.blog-list a {
+  text-decoration: none;
+  background: #fff;
+  display: block;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.blog-list a:hover {
+  background: #e6f2ff;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem;
+  background: #003366;
+  color: white;
+}
+
+.cw--button {
+  background-color: var(--primary) !important;
+  border-radius: 50px !important;
+  box-shadow: 0 4px 15px rgba(0, 95, 163, 0.3) !important;
+}
+
+.cw--launcher-button {
+  width: 56px !important;
+  height: 56px !important;
+}
+
+.cw--header {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+}
