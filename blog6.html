@@ -1,21 +1,163 @@
-<!-- card-style-blog.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Card Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <style>
-    * { box-sizing: border-box; }
-    body { font-family: Arial; padding: 20px; background: #f7f7f7; }
-    .card { background: #fff; border-radius: 8px; box-shadow: 0 0 10px #ccc; padding: 20px; margin: 10px auto; max-width: 600px; }
-    .card h2 { margin: 0; }
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --secondary: #f8fafc;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --white: #ffffff;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --border-radius: 12px;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--secondary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: var(--white);
+      padding: 8rem 2rem;
+      text-align: center;
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+    
+    .content-container {
+      max-width: 800px;
+      margin: -3rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    
+    .content-card {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    
+    .content-card h2 {
+      font-size: 2rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .status-message {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin: 2rem 0;
+      line-height: 1.8;
+    }
+    
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--primary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .action-button:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    .action-button svg {
+      margin-right: 8px;
+    }
+    
+    .loader {
+      margin: 3rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #e2e8f0;
+      border-top: 5px solid var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        padding: 6rem 1.5rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .content-card {
+        padding: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h2>Post Title</h2>
-    <p><em>Author | Date</em></p>
-    <p>This is a card-based layout for clean and simple blogs.</p>
+  <div class="hero">
+    <h1>Coming Soon</h1>
+    <p>We're preparing something special</p>
+  </div>
+  
+  <div class="content-container">
+    <div class="content-card">
+      <h2>Content in Progress</h2>
+      <p class="status-message">Our team is working diligently to create valuable content for you. Please check back soon for updates.</p>
+      
+      <div class="loader">
+        <div class="spinner"></div>
+        <p>Loading upcoming content</p>
+      </div>
+      
+      <a href="index.html" class="action-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Return Home
+      </a>
+    </div>
   </div>
 </body>
 </html>
