@@ -2,25 +2,1461 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Week 3: Fed Interest Rate Hikes</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌍 Global Finance Insights | International Financial Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
-    .hero { background: url('assets/fed.jpg') center/cover no-repeat; color: white; padding: 6rem 2rem; text-align: center; }
-    .blog-body { max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 10px; }
+    :root {
+      --primary: #005fa3;
+      --primary-dark: #003366;
+      --primary-light: #e6f2ff;
+      --secondary: #00a8e8;
+      --accent: #ff6b35;
+      --accent-light: #ffede6;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --darker: #121416;
+      --gray: #6c757d;
+      --light-gray: #e9ecef;
+      --gold: #FFD700;
+      --silver: #C0C0C0;
+      --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --border-radius: 12px;
+      --border-radius-lg: 16px;
+      --border-radius-xl: 24px;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background-color: #f5f7fa;
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 8px solid var(--accent);
+      height: 90vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+      z-index: 0;
+      animation: zoomAnimation 20s infinite alternate;
+    }
+    
+    @keyframes zoomAnimation {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.1);
+      }
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+      z-index: 1;
+    }
+    
+    .header-content {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      z-index: 2;
+    }
+    
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
+      animation: fadeInDown 0.8s ease-out;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+      line-height: 1.1;
+    }
+    
+    .tagline {
+      font-size: 1.5rem;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+      font-weight: 300;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Search */
+    .search-container {
+      max-width: 650px;
+      margin: 0 auto;
+      position: relative;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 1.25rem 2rem;
+      border-radius: 50px;
+      border: none;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      transition: var(--transition);
+      border: 2px solid transparent;
+      font-family: 'Source Sans 3', sans-serif;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+      border-color: var(--accent);
+    }
+    
+    .search-btn {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 0.9rem 2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .search-btn:hover {
+      background: #e05a2b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255, 107, 53, 0.4);
+    }
+    
+    /* Navigation */
+    nav {
+      background: white;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: var(--transition);
+    }
+    
+    .logo:hover {
+      transform: translateY(-2px);
+    }
+    
+    .logo i {
+      color: var(--accent);
+      font-size: 1.2em;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+      transition: width 0.3s ease-out;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .nav-links a.active {
+      color: var(--primary);
+    }
+    
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    /* Mobile menu toggle */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--primary-dark);
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    /* Main content */
+    main {
+      max-width: 1400px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.75rem;
+      color: var(--primary-dark);
+      display: inline-block;
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+    
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    
+    .section-title p {
+      color: var(--gray);
+      max-width: 750px;
+      margin: 1.5rem auto 0;
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+    
+    /* Featured section */
+    .featured-section {
+      background: linear-gradient(135deg, #f5f7fa, #e9ecef);
+      padding: 5rem 2rem;
+      margin: 5rem 0;
+      border-radius: var(--border-radius-xl);
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .featured-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(0,95,163,0.03)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      opacity: 0.5;
+    }
+    
+    .featured-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .featured-card {
+      background: white;
+      border-radius: var(--border-radius-xl);
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .featured-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .featured-image {
+      height: 100%;
+      min-height: 350px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .featured-image::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 83, 143, 0.3), rgba(0, 83, 143, 0.1));
+    }
+    
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    
+    .featured-card:hover .featured-image img {
+      transform: scale(1.05);
+    }
+    
+    .featured-content {
+      padding: 4rem;
+      position: relative;
+    }
+    
+    .featured-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .featured-content h3 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-dark);
+      line-height: 1.3;
+    }
+    
+    .featured-content p {
+      color: var(--gray);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+      padding-right: 30px;
+      font-size: 1.1rem;
+    }
+    
+    .read-more:hover {
+      color: var(--accent);
+    }
+    
+    .read-more i {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s;
+    }
+    
+    .read-more:hover i {
+      transform: translate(5px, -50%);
+    }
+    
+    /* Blog grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .blog-card {
+      background: white;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    
+    .card-image {
+      height: 220px;
+      background: var(--light-gray);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    
+    .blog-card:hover .card-image img {
+      transform: scale(1.1);
+    }
+    
+    .card-tag {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+    
+    .card-content {
+      padding: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-content h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+      line-height: 1.3;
+    }
+    
+    .card-content p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      font-size: 0.9rem;
+      color: var(--gray);
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      padding-top: 1.5rem;
+    }
+    
+    .card-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    /* Newsletter */
+    .newsletter-section {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      padding: 4rem 2rem;
+      margin: 5rem 0;
+      border-radius: var(--border-radius-xl);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .newsletter-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      opacity: 0.2;
+    }
+    
+    .newsletter-container {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .newsletter-container h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    
+    .newsletter-container p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .newsletter-input {
+      flex: 1;
+      padding: 1.25rem 1.5rem;
+      border-radius: 50px;
+      border: none;
+      font-size: 1rem;
+      font-family: 'Source Sans 3', sans-serif;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .newsletter-input:focus {
+      outline: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+    
+    .newsletter-btn {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 0.9rem 2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .newsletter-btn:hover {
+      background: #e05a2b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255, 107, 53, 0.4);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--darker);
+      color: white;
+      padding: 5rem 2rem 2rem;
+      position: relative;
+    }
+    
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+    
+    .footer-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+    }
+    
+    .footer-col h4 {
+      font-size: 1.4rem;
+      margin-bottom: 1.75rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .footer-col h4::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--accent);
+    }
+    
+    .footer-col p {
+      color: #adb5bd;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: 1rem;
+    }
+    
+    .footer-col ul li a {
+      color: #adb5bd;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      padding: 0.25rem 0;
+      font-size: 0.95rem;
+    }
+    
+    .footer-col ul li a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+    
+    .team-members {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    
+    .team-member {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .member-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .member-info h5 {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .member-info p {
+      font-size: 0.85rem;
+      color: var(--secondary);
+      margin: 0;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .social-links a {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #adb5bd;
+      font-size: 0.95rem;
+    }
+    
+    .copyright a {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+    
+    .copyright a:hover {
+      color: var(--accent);
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: #e05a2b;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+    }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .featured-content {
+        padding: 3rem;
+      }
+      
+      .featured-content h3 {
+        font-size: 2.2rem;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      h1 {
+        font-size: 3.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.3rem;
+      }
+      
+      .featured-card {
+        grid-template-columns: 1fr;
+      }
+      
+      .featured-image {
+        min-height: 300px;
+      }
+      
+      .section-title h2 {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 1rem;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: var(--transition);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      
+      .nav-links.active {
+        right: 0;
+      }
+      
+      .mobile-menu-toggle {
+        display: block;
+      }
+      
+      .featured-content {
+        padding: 2.5rem;
+      }
+      
+      .featured-content h3 {
+        font-size: 2rem;
+      }
+      
+      .newsletter-container h2 {
+        font-size: 2rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .newsletter-btn {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .team-members {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      header {
+        height: 85vh;
+        min-height: 500px;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.1rem;
+      }
+      
+      .search-input {
+        padding: 1rem 1.5rem;
+      }
+      
+      .search-btn {
+        padding: 0.75rem 1.5rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Chatwoot Customization */
+    .cw--button {
+      background-color: var(--primary) !important;
+      border-radius: 50px !important;
+      box-shadow: 0 5px 20px rgba(0, 95, 163, 0.4) !important;
+      transition: var(--transition) !important;
+    }
+    
+    .cw--button:hover {
+      background-color: var(--primary-dark) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 25px rgba(0, 95, 163, 0.5) !important;
+    }
+    
+    .cw--launcher-button {
+      width: 60px !important;
+      height: 60px !important;
+    }
+    
+    .cw--header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+    }
+    
+    .cw--close-button {
+      background-color: var(--accent) !important;
+    }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>Week 3: Fed Interest Rate Hikes</h1>
-    <p>Source: World Bank | Author: Alex Kim | Date: 15 July 2025</p>
+  <!-- Back to top button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
   </div>
-  <div class="blog-body">
-    <h2>Summary</h2>
-    <p>The US Federal Reserve has increased rates by 0.25% due to inflationary pressures...</p>
-    <h2>Analysis</h2>
-    <p>This affects capital flows, interest parity, and exchange rate dynamics globally...</p>
-    <p><strong>Author:</strong> Mohamed Ali</p>
-    <a href="index.html">⬅ Back to Home</a>
-  </div>
+  
+  <header>
+    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&q=80" alt="Global finance" class="hero-image">
+    <div class="header-content">
+      <h1 class="animate__animated animate__fadeInDown">🌍 Global Finance Insights</h1>
+      <p class="tagline animate__animated animate__fadeInUp">Expert analysis on international financial markets, currencies, and economic trends to empower your financial decisions</p>
+      <div class="search-container animate__animated animate__fadeInUp">
+        <input type="text" class="search-input" placeholder="Search articles, reports, and analysis...">
+        <button class="search-btn"><i class="fas fa-search"></i> Search</button>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fas fa-chart-line"></i> GLOBAL FINANCE INSIGHTS</a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="analysis.html"><i class="fas fa-analytics"></i> Analysis</a>
+        <a href="https://www.cse.lk/pages/aboutus-annual-reports/aboutus-annual-reports.component.html"><i class="fas fa-file-alt"></i> Reports</a>
+        <a href="https://www.investing.com/"><i class="fas fa-chart-bar"></i> Markets</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+      </div>
+    </div>
+  </nav>
+  
+  <main>
+    <section class="featured-section">
+      <div class="featured-container">
+        <div class="featured-card">
+          <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Featured Analysis">
+          </div>
+          <div class="featured-content">
+            <span class="featured-tag">Featured Report</span>
+            <h3>2025 Global Financial Outlook: Navigating Uncertainty</h3>
+            <p>Our comprehensive analysis of the key financial trends, risks, and opportunities shaping the global economy in 2025. Understand the forces driving markets and how to position your investments in this complex economic landscape.</p>
+            <a href="featured.html" class="read-more">Read Featured Analysis <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div class="section-title">
+        <h2>Latest Insights</h2>
+        <p>Weekly analysis on global financial markets, currency movements, and economic developments from our team of experts</p>
+      </div>
+      
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Currency Markets</div>
+            <img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Currency exchange">
+          </div>
+          <div class="card-content">
+            <h3>Global Currency Volatility: Trends and Forecasts</h3>
+            <p>Examining the recent fluctuations in major currency pairs and what it means for international trade and investments in the current economic climate.</p>
+            <a href="blog1.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> June 15, 2025</span>
+              <span><i class="far fa-clock"></i> 5 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">IMF</div>
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="IMF meeting">
+          </div>
+          <div class="card-content">
+            <h3>IMF and Sri Lanka – Breaking Down the New Deal</h3>
+            <p>Analysis of the recent IMF agreement with Sri Lanka and its implications for the country's economic recovery and long-term financial stability.</p>
+            <a href="blog2.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> June 8, 2025</span>
+              <span><i class="far fa-clock"></i> 7 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Monetary Policy</div>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Federal Reserve">
+          </div>
+          <div class="card-content">
+            <h3>Fed Interest Rate Hikes: Global Ripple Effects</h3>
+            <p>How the Federal Reserve's recent rate decisions are impacting emerging markets and global capital flows in the current financial year.</p>
+            <a href="blog3.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> June 1, 2025</span>
+              <span><i class="far fa-clock"></i> 6 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Emerging Markets</div>
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="African economy">
+          </div>
+          <div class="card-content">
+            <h3>Sovereign Debt Crisis in Africa: Causes and Solutions</h3>
+            <p>Exploring the growing debt burden across African nations and potential pathways to financial stability in the region.</p>
+            <a href="blog4.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> May 25, 2025</span>
+              <span><i class="far fa-clock"></i> 8 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Investment</div>
+            <img src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="South Asia economy">
+          </div>
+          <div class="card-content">
+            <h3>FDI Trends in South Asia: Opportunities and Risks</h3>
+            <p>Analyzing foreign direct investment patterns across South Asian economies in the post-pandemic era and emerging opportunities.</p>
+            <a href="blog5.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> May 18, 2025</span>
+              <span><i class="far fa-clock"></i> 5 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Digital Finance</div>
+            <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Digital currency">
+          </div>
+          <div class="card-content">
+            <h3>Digital Currencies and Their Impact on Forex Markets</h3>
+            <p>How central bank digital currencies and cryptocurrencies are reshaping traditional foreign exchange markets and global finance.</p>
+            <a href="blog6.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> May 11, 2025</span>
+              <span><i class="far fa-clock"></i> 7 min read</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    
+    <section class="newsletter-section">
+      <div class="newsletter-container">
+        <h2>Stay Updated with Our Insights</h2>
+        <p>Subscribe to our newsletter and receive weekly analysis on global financial markets directly to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required>
+          <button type="submit" class="newsletter-btn">Subscribe <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </section>
+    
+    <section>
+      <div class="section-title">
+        <h2>More Insights</h2>
+        <p>Additional analysis and reports on international finance topics from our expert contributors</p>
+      </div>
+      
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Trade</div>
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Trade deficit">
+          </div>
+          <div class="card-content">
+            <h3>Trade Deficits and Exchange Rate Dynamics</h3>
+            <p>How persistent trade imbalances influence currency valuations and what policymakers can do about it in the current global context.</p>
+            <a href="blog7.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> May 4, 2025</span>
+              <span><i class="far fa-clock"></i> 6 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Eurozone</div>
+            <img src="https://images.unsplash.com/photo-1500380804539-4e1e8c1e7118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Eurozone">
+          </div>
+          <div class="card-content">
+            <h3>Eurozone Inflation and Its Regional Impact</h3>
+            <p>Analyzing the uneven effects of inflation across Eurozone countries and ECB policy responses to economic challenges.</p>
+            <a href="blog8.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> April 27, 2025</span>
+              <span><i class="far fa-clock"></i> 5 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Middle East</div>
+            <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Middle East">
+          </div>
+          <div class="card-content">
+            <h3>Currency Pegs in the Middle East: Stability vs. Flexibility</h3>
+            <p>Examining the pros and cons of fixed exchange rate regimes in Gulf Cooperation Council countries in the current oil market.</p>
+            <a href="blog9.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> April 20, 2025</span>
+              <span><i class="far fa-clock"></i> 7 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Sri Lanka</div>
+            <img src="https://images.unsplash.com/photo-1580619305218-842c54a002ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Sri Lanka">
+          </div>
+          <div class="card-content">
+            <h3>Sri Lanka – CBSL Annual Report Review</h3>
+            <p>Key takeaways from the Central Bank of Sri Lanka's latest annual report and economic outlook for the coming years.</p>
+            <a href="blog10.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> April 13, 2025</span>
+              <span><i class="far fa-clock"></i> 8 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">Emerging Markets</div>
+            <img src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Emerging markets">
+          </div>
+          <div class="card-content">
+            <h3>Capital Flows to Emerging Markets: 2025 Trends</h3>
+            <p>Identifying the most attractive emerging markets for portfolio investment in the current year and sector opportunities.</p>
+            <a href="blog11.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> April 6, 2025</span>
+              <span><i class="far fa-clock"></i> 6 min read</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="card-image">
+            <div class="card-tag">China</div>
+            <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="China">
+          </div>
+          <div class="card-content">
+            <h3>China's Evolving Strategy in Global Trade Wars</h3>
+            <p>How China is adapting its economic policies in response to ongoing trade tensions with Western nations and shifting alliances.</p>
+            <a href="blog12.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="card-meta">
+              <span><i class="far fa-calendar-alt"></i> March 30, 2025</span>
+              <span><i class="far fa-clock"></i> 7 min read</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Global Finance Insights</h4>
+        <p>Providing expert analysis on international financial markets, currencies, and economic trends since 2018. Our mission is to deliver actionable insights to help you navigate the complex world of global finance.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="analysis.html">Analysis</a></li>
+          <li><a href="https://www.cse.lk/pages/aboutus-annual-reports/aboutus-annual-reports.component.html">Reports</a></li>
+          <li><a href="https://www.investing.com/">Markets</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Currency Markets</a></li>
+          <li><a href="#">Monetary Policy</a></li>
+          <li><a href="#">Emerging Markets</a></li>
+          <li><a href="#">Trade Analysis</a></li>
+          <li><a href="#">Investment Trends</a></li>
+          <li><a href="#">Digital Finance</a></li>
+          <li><a href="#">Economic Indicators</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Our Team</h4>
+        <div class="team-members">
+          <div class="team-member">
+            <div class="member-avatar">JD</div>
+            <div class="member-info">
+              <h5>John Doe</h5>
+              <p>Lead Analyst</p>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">AS</div>
+            <div class="member-info">
+              <h5>Alice Smith</h5>
+              <p>Market Researcher</p>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">RJ</div>
+            <div class="member-info">
+              <h5>Robert Johnson</h5>
+              <p>Data Scientist</p>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">MB</div>
+            <div class="member-info">
+              <h5>Maria Brown</h5>
+              <p>Editor</p>
+            </div>
+          </div>
+        </div>
+        
+        <h4 style="margin-top: 2rem;">Contact Info</h4>
+        <p><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> 123 Financial District, Colombo 01, Sri Lanka</p>
+        <p><i class="fas fa-phone" style="margin-right: 0.5rem;"></i> +94 11 234 5678</p>
+        <p><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i> info@globalfinanceinsights.com</p>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 Global Finance Insights. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Cookie Policy</a></p>
+    </div>
+  </footer>
+
+  <!-- Chatwoot Live Chat Widget -->
+  <script>
+    (function(d,t) {
+      var BASE_URL="https://app.chatwoot.com";
+      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=BASE_URL+"/packs/js/sdk.js";
+      g.defer = true;
+      g.async = true;
+      s.parentNode.insertBefore(g,s);
+      g.onload=function(){
+        window.chatwootSDK.run({
+          websiteToken: 'Hkr4HuEfenWEQnVVKtjmnXXG',
+          baseUrl: BASE_URL
+        })
+      }
+    })(document,"script");
+  </script>
+  
+  <script>
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileMenuToggle.innerHTML = navLinks.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Back to top button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Animate elements when they come into view
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.blog-card, .featured-card');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    
+    // Set initial state for animation
+    document.querySelectorAll('.blog-card, .featured-card').forEach(element => {
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(20px)';
+      element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+    
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
 </body>
 </html>
