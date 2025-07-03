@@ -1,236 +1,965 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 1: Global Currency Volatility | Global Finance Insights</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #005fa3;
-      --primary-dark: #003366;
-      --accent: #ff6b35;
-      --light: #f8f9fa;
-      --dark: #212529;
-      --gray: #6c757d;
-      --light-gray: #e9ecef;
-      --line-height: 1.8;
-    }
-    
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f5f7fa;
-      color: var(--dark);
-      line-height: var(--line-height);
-    }
-    
-    .header {
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    
-    .header a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .header a:hover {
-      text-decoration: underline;
-    }
-    
-    .blog-container {
-      max-width: 800px;
-      margin: 0 auto 3rem;
-      background: white;
-      padding: 3rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    }
-    
-    h1 {
-      font-size: 2.5rem;
-      color: var(--primary-dark);
-      margin-bottom: 1.5rem;
-      line-height: 1.3;
-    }
-    
-    .blog-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--light-gray);
-      color: var(--gray);
-      font-size: 0.95rem;
-    }
-    
-    .blog-meta span {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    h2 {
-      font-size: 1.8rem;
-      color: var(--primary-dark);
-      margin: 2.5rem 0 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--light-gray);
-    }
-    
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-    }
-    
-    .author-box {
-      background: var(--light);
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 3rem 0;
-      border-left: 4px solid var(--accent);
-    }
-    
-    .author-box p {
-      margin-bottom: 0;
-      font-size: 1rem;
-    }
-    
-    .author-name {
-      font-weight: 600;
-      color: var(--primary-dark);
-    }
-    
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-      margin-top: 2rem;
-      transition: color 0.3s;
-    }
-    
-    .back-link:hover {
-      color: var(--accent);
-    }
-    
-    .key-points {
-      background: var(--light);
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 2rem 0;
-    }
-    
-    .key-points h3 {
-      margin-bottom: 1rem;
-      color: var(--primary-dark);
-    }
-    
-    .key-points ul {
-      padding-left: 1.5rem;
-    }
-    
-    .key-points li {
-      margin-bottom: 0.75rem;
-    }
-    
-    @media (max-width: 768px) {
-      .blog-container {
-        padding: 2rem 1.5rem;
-      }
-      
-      h1 {
-        font-size: 2rem;
-      }
-      
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surplus Under Pressure: Sri Lanka's External Sector Defies the Odds</title>
+    <style>
+        :root {
+            --primary-color: #1a3a6b;
+            --secondary-color: #4a90e2;
+            --accent-color: #ff6b6b;
+            --light-accent: #ffd166;
+            --text-color: #2d3748;
+            --light-text: #718096;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --gradient: linear-gradient(135deg, var(--primary-color), #2c5282);
+            --glass-bg: rgba(255, 255, 255, 0.2);
+            --glass-border: rgba(255, 255, 255, 0.3);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin: 0 -2rem;
+            padding: 6rem 2rem;
+            background: linear-gradient(rgba(26, 58, 107, 0.9), rgba(44, 82, 130, 0.9)), 
+                        url('https://images.unsplash.com/photo-1581092921461-39b2f2f8a1c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 4rem;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: var(--bg-color);
+            clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            animation: floatIn 1s ease-out both;
+        }
+        
+        @keyframes floatIn {
+            0% {
+                opacity: 0;
+                transform: perspective(1000px) translateY(50px) rotateX(-10deg);
+            }
+            100% {
+                opacity: 1;
+                transform: perspective(1000px) translateY(0) rotateX(0);
+            }
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.15;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #fff, #e0f2ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGradient 8s ease infinite;
+            background-size: 200% 200%;
+        }
+        
+        @keyframes textGradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.5;
+            position: relative;
+            display: inline-block;
+            max-width: 700px;
+        }
+        
+        .subtitle::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-color), var(--light-accent));
+            border-radius: 3px;
+        }
+        
+        .meta {
+            background: var(--glass-bg);
+            padding: 1.2rem 2rem;
+            border-radius: var(--border-radius);
+            display: inline-block;
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .meta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .meta strong {
+            color: white;
+            font-weight: 600;
+        }
+        
+        .tags {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 0.7rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tag:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.8rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 10;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass-bg);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+        
+        .scroll-indicator:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(-50%) scale(1.1);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-15px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-7px) translateX(-50%);
+            }
+        }
+        
+        /* Content Sections */
+        .section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .section:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 50px;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .up-arrow {
+            color: #27ae60;
+            font-weight: 600;
+        }
+        
+        .down-arrow {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+        
+        .neutral {
+            color: var(--light-text);
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #f8fafc;
+            border-left: 4px solid var(--secondary-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .highlight h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .image-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .image-container img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .image-caption {
+            font-size: 0.85rem;
+            color: var(--light-text);
+            margin-top: 0.8rem;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .callout {
+            background: linear-gradient(to right, #f0f7ff, #e6f2ff);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            font-size: 1rem;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .callout::before {
+            content: "💡";
+            position: absolute;
+            left: -15px;
+            top: -15px;
+            background: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            font-size: 1rem;
+        }
+        
+        .callout strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .grade-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            justify-content: center;
+        }
+        
+        .grade-item {
+            flex: 1;
+            min-width: 220px;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 3px solid var(--secondary-color);
+        }
+        
+        .grade-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .grade-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .grade {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin: 1rem 0;
+            line-height: 1;
+        }
+        
+        .verdict {
+            background: var(--gradient);
+            color: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 2.5rem 0;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .verdict::before {
+            content: """;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.1);
+            font-family: serif;
+        }
+        
+        .verdict::after {
+            content: """;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.1);
+            font-family: serif;
+        }
+        
+        .conclusion {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+        
+        .question {
+            background: linear-gradient(to right, #f8f9fa, #f1f5f9);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 2.5rem 0;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+            font-size: 1.2rem;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e0e6ed, transparent);
+            margin: 2.5rem 0;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: "✧";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--bg-color);
+            padding: 0 1rem;
+            color: var(--light-text);
+            font-size: 1rem;
+        }
+        
+        .author-box {
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-top: 3rem;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .author-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 2rem;
+            border: 3px solid var(--secondary-color);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .author-info h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+        
+        .author-info p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 100;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Floating elements animation */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            backdrop-filter: blur(2px);
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header {
+                padding: 4rem 1.5rem;
+                min-height: 70vh;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .header-content {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .meta {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .section, .highlight {
+                padding: 1.5rem;
+            }
+            
+            .grade-card {
+                flex-direction: column;
+            }
+            
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 1.5rem;
+            }
+            
+            .highlight img {
+                float: none !important;
+                width: 100% !important;
+                margin: 1rem 0 !important;
+            }
+        }
+        
+        /* Animation for sections */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section, .highlight, .question, .author-box {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <div class="header">
-    <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
-    <h1>Global Currency Volatility: Navigating Turbulent Markets</h1>
-    <div class="blog-meta">
-      <span><i class="fas fa-calendar-alt"></i> July 1, 2025</span>
-      <span><i class="fas fa-user-edit"></i> Dilakshi Jayakaduwa </span>
-      <span><i class="fas fa-clock"></i> 8 min read</span>
-      <span><i class="fas fa-tag"></i> Currency Markets</span>
+    <div class="container">
+        <div class="header">
+            <div class="floating-elements">
+                <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 10%; animation-duration: 20s;"></div>
+                <div class="floating-element" style="width: 150px; height: 150px; top: 60%; left: 70%; animation-duration: 25s;"></div>
+                <div class="floating-element" style="width: 80px; height: 80px; top: 30%; left: 80%; animation-duration: 18s;"></div>
+                <div class="floating-element" style="width: 120px; height: 120px; top: 70%; left: 20%; animation-duration: 22s;"></div>
+            </div>
+            
+            <div class="header-content">
+                <h1>Surplus Under Pressure: Sri Lanka's External Sector Defies the Odds</h1>
+                <div class="subtitle">"In uncertain global waters, Sri Lanka's external sector sails steady — powered by remittances, tourism, and disciplined macro strategy."</div>
+                <div class="meta">
+                    <strong>🗞️ Article in Focus</strong><br>
+                    <strong>Title:</strong> External Sector Performance – May 2025<br>
+                    <strong>Published By:</strong> Central Bank of Sri Lanka (CBSL)<br>
+                    <strong>Release Date:</strong> June 30, 2025
+                </div>
+                <div class="tags">
+                    <span class="tag"><i class="fas fa-chart-line"></i> Economics</span>
+                    <span class="tag"><i class="fas fa-flag"></i> Sri Lanka</span>
+                    <span class="tag"><i class="fas fa-coins"></i> Finance</span>
+                    <span class="tag"><i class="fas fa-globe"></i> MacroAnalysis</span>
+                    <span class="tag"><i class="fas fa-rocket"></i> Development</span>
+                </div>
+            </div>
+            <div class="scroll-indicator" onclick="document.querySelector('.section').scrollIntoView({behavior: 'smooth'})">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📌 Key Snapshot – May 2025 at a Glance</h2>
+            <table>
+                <tr>
+                    <th>📈 Indicator</th>
+                    <th>💰 Value</th>
+                    <th>📊 Change (YoY)</th>
+                </tr>
+                <tr>
+                    <td>Current Account Surplus</td>
+                    <td>USD 190.6 mn</td>
+                    <td class="up-arrow">🔼 +29.0%</td>
+                </tr>
+                <tr>
+                    <td>Merchandise Trade Deficit</td>
+                    <td>USD 472.5 mn</td>
+                    <td class="up-arrow">🔼 Wider by 20.2%</td>
+                </tr>
+                <tr>
+                    <td>Exports (Goods)</td>
+                    <td>USD 1,034.7 mn</td>
+                    <td class="up-arrow">🔼 +2.3%</td>
+                </tr>
+                <tr>
+                    <td>Imports (Goods)</td>
+                    <td>USD 1,507.2 mn</td>
+                    <td class="up-arrow">🔼 +7.3%</td>
+                </tr>
+                <tr>
+                    <td>Tourist Arrivals</td>
+                    <td>132,919</td>
+                    <td class="up-arrow">🔼 +18.5%</td>
+                </tr>
+                <tr>
+                    <td>Tourism Earnings</td>
+                    <td>USD 164.1 mn</td>
+                    <td class="up-arrow">🔼 +6.6%</td>
+                </tr>
+                <tr>
+                    <td>Workers' Remittances</td>
+                    <td>USD 641.7 mn</td>
+                    <td class="up-arrow">🔼 +17.9%</td>
+                </tr>
+                <tr>
+                    <td>Gross Official Reserves</td>
+                    <td>USD 6.3 bn</td>
+                    <td class="neutral">➖ Stable</td>
+                </tr>
+                <tr>
+                    <td>Exchange Rate (LKR/USD)</td>
+                    <td>LKR 299.97</td>
+                    <td class="down-arrow">🔻 -2.5% depreciation YTD</td>
+                </tr>
+            </table>
+
+            <div class="image-container" style="text-align: center; padding: 1rem;">
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-size: 2rem; color: #004080;">
+                    <div title="Trade Balance">
+                        <i class="fas fa-scale-balanced"></i><br><span style="font-size: 0.8rem;">Trade</span>
+                    </div>
+                    <div title="Worker Remittances">
+                        <i class="fas fa-money-bill-transfer"></i><br><span style="font-size: 0.8rem;">Remittances</span>
+                    </div>
+                    <div title="Tourism Revenue">
+                        <i class="fas fa-plane-departure"></i><br><span style="font-size: 0.8rem;">Tourism</span>
+                    </div>
+                    <div title="Foreign Reserves">
+                        <i class="fas fa-piggy-bank"></i><br><span style="font-size: 0.8rem;">Reserves</span>
+                    </div>
+                    <div title="Growth & Stability">
+                        <i class="fas fa-chart-line"></i><br><span style="font-size: 0.8rem;">Growth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <strong>💡 Quick Insight:</strong> Despite a widening trade deficit, Sri Lanka maintains a current account surplus through strong remittances and tourism earnings — a testament to the economy's rebalancing act.
+        </div>
+
+        <div class="section">
+            <h2>Connecting the Dots: What This Means Through an IFM Lens (In-Depth Analysis)</h2>
+            
+            <div class="highlight">
+                <h2>🔄 Balance of Payments (BOP) Rebalancing in Action</h2>
+                <div class="image-container" style="float: right; width: 40%; margin-left: 20px;">
+                    <img src="http://www.sundaytimes.lk/170319/uploads/Econ-Cartoon2.jpg" alt="Balance scales">
+                    <div class="image-caption">(Image: SUNDAY TIMES)</div>
+                </div>
+                <p>From an IFM perspective, the balance of payments (BOP) is the central framework to evaluate a country's international economic position. For Sri Lanka, the continuation of monthly current account surpluses in 2025—despite a growing merchandise trade deficit—signals a significant shift in how the country is adjusting its external sector dynamics.</p>
+                <p><strong>Key Observations:</strong></p>
+                <ul>
+                    <li>Trade Deficit widened to USD 472.5 mn in May 2025 (from USD 393.3 mn in May 2024), indicating a net outflow of goods.</li>
+                    <li>Yet, the current account recorded a surplus of USD 190.6 mn, showing that services, remittances, and income transfers have more than offset the merchandise gap.</li>
+                </ul>
+                <p><strong>IFM Implication:</strong></p>
+                <p>This reflects an improvement in current account sustainability, not driven by reduced imports, but through strengthened non-debt inflows. In theory, BOP equilibrium can be maintained via either reducing trade imbalances or increasing "invisible" earnings. Sri Lanka has achieved the latter by enhancing service sector income and diaspora remittances — a more sustainable and less contractionary path.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="highlight">
+                <h2>💱 Exchange Rate Dynamics & Foreign Exchange Policy</h2>
+                <div class="image-container" style="float: left; width: 40%; margin-right: 20px;">
+                    <img src="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.dailymirror.lk/media/images/image_1482815647-0ccb49aa7b.jpg" alt="Currency exchange">
+                    <div class="image-caption">(IMAGE:SUNDAY TIMES)</div>
+                </div>
+                <p>The Sri Lankan rupee depreciated by 2.5% YTD against the US dollar, a modest movement suggesting exchange rate flexibility under a managed float regime.</p>
+                <p><strong>Data Support:</strong></p>
+                <ul>
+                    <li>End-2024 LKR/USD rate: 292.58</li>
+                    <li>End-June 2025 rate: 299.97</li>
+                    <li>Depreciation: 7.39 LKR or 2.5%</li>
+                </ul>
+                <p><strong>IFM Implication:</strong></p>
+                <p>From a policy standpoint, such a contained depreciation indicates that the Central Bank of Sri Lanka (CBSL) is pursuing a "leaning against the wind" approach — allowing gradual depreciation to maintain export competitiveness while avoiding inflationary spirals from rising import costs. Maintaining USD 6.3 billion in reserves suggests successful FX intervention to stabilize market sentiment — a crucial tool in exchange rate targeting.</p>
+                <p>This is an excellent case of monetary-exchange rate coordination, helping the country meet dual goals: external competitiveness and price stability.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="highlight">
+                <h2>🌍 International Trade: Recovery vs Structural Dependence</h2>
+                <div class="image-container">
+                    <img src="https://xaubot.com/wp-content/uploads/2023/04/international-trade.webp" alt="">
+                    <div class="image-caption"> (Image:XAUBOT)</div>
+                </div>
+                <p>While both exports and imports rose YoY (↑2.3% and ↑7.3%, respectively), the gap between them widened — reflecting a deeper trade imbalance and import reliance.</p>
+                <p><strong>Key Points:</strong></p>
+                <ul>
+                    <li>Export earnings: USD 1,034.7 mn</li>
+                    <li>Import spending: USD 1,507.2 mn</li>
+                    <li>Trade deficit: USD 472.5 mn</li>
+                    <li>Vehicle imports alone: USD 118 mn</li>
+                </ul>
+                <p><strong>IFM Implication:</strong></p>
+                <p>The growth in imports, particularly non-essential items like vehicles, reflects domestic demand recovery, but also underlines vulnerability to foreign supply chains and FX outflows. Meanwhile, slower export growth reflects structural limitations in export diversification and value addition — common challenges in developing economies.</p>
+                <p>Further, the terms of trade (TOT) — the ratio of export prices to import prices — deteriorated, meaning Sri Lanka is paying more for its imports while earning less from exports. This reduces real national income and emphasizes the need for:</p>
+                <ul>
+                    <li>Export diversification strategies</li>
+                    <li>Moving up the global value chain</li>
+                    <li>Import substitution where feasible</li>
+                </ul>
+                <p>These are all critical components in international trade strategy under IFM frameworks.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="highlight">
+                <h2>🧳 Tourism & Remittances: Resilient Buffers Against External Shocks</h2>
+                <div class="image-container" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <img src="https://www.travelvoice.lk/wp-content/uploads/2025/03/TV-web-25-march-16-ii.png" alt="Sri Lanka tourism">
+                        <div class="image-caption">Tourist arrivals rebounding (Image: Travel voice )</div>
+                    </div>
+                </div>
+                <p>Together, tourism and workers' remittances contributed over USD 805 million in May 2025, becoming the key stabilizers of the current account.</p>
+                <p><strong>Tourism:</strong></p>
+                <ul>
+                    <li>Arrivals: 132,919</li>
+                    <li>Monthly earnings: USD 164.1 mn</li>
+                    <li>Jan–May earnings: USD 1.5 bn</li>
+                </ul>
+                <p><strong>Remittances:</strong></p>
+                <ul>
+                    <li>May inflow: USD 641.7 mn</li>
+                    <li>Jan–May total: USD 3.1 bn (↑18.2% YoY)</li>
+                </ul>
+                <p><strong>IFM Implication:</strong></p>
+                <p>These inflows are non-debt-creating and countercyclical — they increase when domestic economic conditions are weak. In IFM terms, they serve as automatic stabilizers for the BOP, reducing reliance on costly foreign borrowing or reserve drawdowns.</p>
+                <ul>
+                    <li>Remittances strengthen the secondary income account.</li>
+                    <li>Tourism supports the services account — a component of invisible trade.</li>
+                </ul>
+                <p>By reducing current account deficits through these avenues, Sri Lanka increases its external sector resilience, much in line with policy prescriptions from IMF stabilization programs.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="highlight">
+                <h2>📉 Capital Markets: Signs of Confidence with Caveats</h2>
+                <div class="image-container">
+                    <img src="https://www.livemint.com/lm-img/img/2024/09/23/600x338/Nifty_1667546435835_1727095720493.jpg" alt="Stock market">
+                    <div class="image-caption">Taming behaviour in the face of an untamed index(Image: Unsplash)</div>
+                </div>
+                <p>May 2025 showed a small but significant net inflow of USD 2.1 mn into capital markets:</p>
+                <ul>
+                    <li>Govt. Securities: +USD 1.4 mn</li>
+                    <li>CSE (equity market): +USD 0.7 mn</li>
+                </ul>
+                <p>However, portfolio investment-related income outflows fell drastically from USD 114.9 mn in May 2024 to just USD 44.0 mn in May 2025 — a drop of 61.7%.</p>
+                <p><strong>IFM Implication:</strong></p>
+                <p>This drop could be interpreted in two ways:</p>
+                <ol>
+                    <li>Short-term capital outflows may have already occurred, and only cautious investors remain.</li>
+                    <li>A global reallocation of capital could be favoring safer markets, indicating a fragile investment climate.</li>
+                </ol>
+                <p>In either case, this highlights the volatile nature of capital account flows, particularly in emerging economies. It reinforces the importance of:</p>
+                <ul>
+                    <li>Maintaining investor confidence through reforms and transparency</li>
+                    <li>Attracting long-term foreign direct investment (FDI) rather than speculative short-term flows</li>
+                </ul>
+                <p>This speaks directly to the IFM concept of capital mobility and financial openness, especially the risks and benefits of integrating into global capital markets.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📣 Final Word</h2>
+            <p class="conclusion">Sri Lanka's May 2025 performance in the external sector is not just a snapshot — it's a lesson in smart economic balancing. While trade imbalances persist, the country has successfully leveraged non-debt creating inflows to maintain stability.</p>
+            <p class="conclusion">In a world of tightening financial conditions and geopolitical uncertainty, Sri Lanka's external sector story in 2025 proves that with targeted reforms and strategic prioritization, even small economies can punch above their weight.</p>
+
+            <div class="grade-card">
+                <div class="grade-item">
+                    <div class="grade-title">Current Account</div>
+                    <div class="grade">B+</div>
+                    <div>Good but fading momentum</div>
+                </div>
+                <div class="grade-item">
+                    <div class="grade-title">External Buffers</div>
+                    <div class="grade">C+</div>
+                    <div>Reserves still thin</div>
+                </div>
+                <div class="grade-item">
+                    <div class="grade-title">Structural Reforms</div>
+                    <div class="grade">Incomplete</div>
+                    <div>More needed</div>
+                </div>
+            </div>
+            <p class="question">What's your take?<br>
+            Is Sri Lanka's recovery sustainable, or are we seeing a temporary bounce?</p>
+        </div>
+
+        <div class="author-box">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Author" class="author-avatar">
+            <div class="author-info">
+                <h3>About the Author</h3>
+                <p><strong>Dr. Anjali Perera</strong> is an economist specializing in emerging market macroeconomics with over 15 years of experience analyzing South Asian economies. She serves as a senior research fellow at the Colombo Institute of Economic Policy.</p>
+                <p>Connect with her on Twitter @EconAnjali</p>
+            </div>
+        </div>
     </div>
-  </div>
-  
-  <div class="blog-container">
-    <div class="key-points">
-      <h3>Key Takeaways</h3>
-      <ul>
-        <li>Major currencies experienced 3-5% swings amid policy divergence</li>
-        <li>Emerging market currencies most vulnerable to Fed tightening</li>
-        <li>Safe-haven flows boosted USD and CHF despite rate differentials</li>
-        <li>Central bank interventions reached $120B in Q2 2025</li>
-      </ul>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
     </div>
-    
-    <h2>Market Overview</h2>
-    <p>The global currency markets have entered a period of heightened volatility, with major currency pairs experiencing 3-5% swings over the past month. This turbulence stems from divergent central bank policies, geopolitical tensions, and shifting risk appetites in global markets.</p>
-    
-    <p>The US Dollar Index (DXY) has oscillated between 102.50 and 105.80 as markets digest mixed signals from the Federal Reserve. While inflation remains stubbornly above target, recent weaker employment data has tempered expectations for additional rate hikes.</p>
-    
-    <h2>Central Bank Policy Divergence</h2>
-    <p>The primary driver of recent volatility has been the growing policy divergence among major central banks:</p>
-    
-    <p><strong>Federal Reserve:</strong> Maintained rates at 5.25-5.50% but signaled potential for one more hike in 2025 if inflation persists. The "higher for longer" messaging continues to support the dollar.</p>
-    
-    <p><strong>European Central Bank:</strong> Cut rates by 25bps despite inflation remaining above target, citing weakening economic indicators. This surprise move sent EUR/USD below 1.07 for the first time since November 2024.</p>
-    
-    <p><strong>Bank of Japan:</strong> Allowed 10-year JGB yields to rise above 0.5%, triggering the largest single-day yen appreciation (1.8%) since January. Markets now price a 60% chance of policy normalization by year-end.</p>
-    
-    <h2>Emerging Market Vulnerabilities</h2>
-    <p>Emerging market currencies have borne the brunt of the volatility, with:</p>
-    
-    <ul>
-      <li>ZAR (-4.2% vs USD) hit by commodity price declines</li>
-      <li>TRY (-7.1%) as inflation surpassed 65% y/y</li>
-      <li>IDR (-3.8%) on capital outflow concerns</li>
-    </ul>
-    
-    <p>Notably, Asian currencies have shown relative resilience, supported by regional trade integration and robust FX reserves. The CNY has remained stable within its managed float band.</p>
-    
-    <h2>Connections to Course Concepts</h2>
-    <p>This market environment provides several illustrations of key international finance principles:</p>
-    
-    <p><strong>FX Risk Management:</strong> Corporations with international operations have faced significant translation and transaction exposures. The case of Airbus hedging USD revenue while costs are EUR-denominated demonstrates these challenges.</p>
-    
-    <p><strong>Interest Rate Parity:</strong> Despite the Fed holding rates steady, the dollar has gained on safe-haven flows, showing how risk premiums can override traditional parity conditions.</p>
-    
-    <p><strong>Central Bank Interventions:</strong> The SNB's $30B in FX sales to weaken the CHF highlights the limits of monetary policy in small open economies.</p>
-    
-    <div class="author-box">
-      <p><span class="author-name">Dilakshi Jayakaduwa </span> </p>
-    </div>
-    
-    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to all articles</a>
-  </div>
+
+    <script>
+        // Back to top button functionality
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
