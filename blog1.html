@@ -6,20 +6,55 @@
     <title>Surplus Under Pressure: Sri Lanka's External Sector Defies the Odds</title>
     <style>
         :root {
-            --primary-color: #1a3a6b;
+            --primary-color: #1a3a5a;
+            --primary-dark: #0f2538;
             --secondary-color: #4a90e2;
+            --secondary-light: #e1f0ff;
             --accent-color: #ff6b6b;
+            --accent-light: #ffebeb;
             --light-accent: #ffd166;
+            --light-accent-bg: #fff9e6;
             --text-color: #2d3748;
+            --text-light: #4a5568;
             --light-text: #718096;
             --bg-color: #f8fafc;
             --card-bg: #ffffff;
             --border-radius: 12px;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --border-radius-sm: 8px;
+            --box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            --box-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
             --transition: all 0.3s ease;
-            --gradient: linear-gradient(135deg, var(--primary-color), #2c5282);
-            --glass-bg: rgba(255, 255, 255, 0.2);
-            --glass-border: rgba(255, 255, 255, 0.3);
+            --gradient: linear-gradient(135deg, #1a3a5a 0%, #2c5282 100%);
+            --gradient-accent: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --success-color: #28a745;
+            --warning-color: #fd7e14;
+            --danger-color: #dc3545;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2) format('woff2');
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hiA.woff2) format('woff2');
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiA.woff2) format('woff2');
         }
         
         body {
@@ -30,6 +65,9 @@
             margin: 0;
             padding: 0;
             -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+            text-align: justify;
+            hyphens: auto;
         }
         
         .container {
@@ -38,13 +76,13 @@
             padding: 0 2rem;
         }
         
-        /* Header Section */
+        /* Premium Header */
         .header {
             text-align: center;
             margin: 0 -2rem;
             padding: 6rem 2rem;
-            background: linear-gradient(rgba(26, 58, 107, 0.9), rgba(44, 82, 130, 0.9)), 
-                        url('https://images.unsplash.com/photo-1581092921461-39b2f2f8a1c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(26, 58, 90, 0.9), rgba(44, 82, 130, 0.9)), 
+                        url('https://images.unsplash.com/photo-1581092921461-39b2f2f8a1c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat fixed;
             color: white;
             position: relative;
             overflow: hidden;
@@ -54,7 +92,7 @@
             justify-content: center;
             min-height: 80vh;
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
         .header::after {
@@ -80,10 +118,10 @@
             -webkit-backdrop-filter: blur(12px);
             border-radius: var(--border-radius);
             border: 1px solid var(--glass-border);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             transform-style: preserve-3d;
             transform: perspective(1000px);
-            animation: floatIn 1s ease-out both;
+            animation: floatIn 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
         }
         
         @keyframes floatIn {
@@ -98,12 +136,12 @@
         }
         
         h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.15;
             color: white;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
             letter-spacing: -0.02em;
             background: linear-gradient(to right, #fff, #e0f2ff);
             -webkit-background-clip: text;
@@ -111,6 +149,7 @@
             -webkit-text-fill-color: transparent;
             animation: textGradient 8s ease infinite;
             background-size: 200% 200%;
+            text-align: center;
         }
         
         @keyframes textGradient {
@@ -120,15 +159,16 @@
         }
         
         .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 400;
             opacity: 0.95;
             margin-bottom: 2.5rem;
             color: rgba(255, 255, 255, 0.95);
-            line-height: 1.5;
+            line-height: 1.6;
             position: relative;
             display: inline-block;
             max-width: 700px;
+            text-align: center;
         }
         
         .subtitle::after {
@@ -138,7 +178,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
-            height: 3px;
+            height: 4px;
             background: linear-gradient(to right, var(--accent-color), var(--light-accent));
             border-radius: 3px;
         }
@@ -152,13 +192,15 @@
             margin-bottom: 2.5rem;
             backdrop-filter: blur(8px);
             border: 1px solid var(--glass-border);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             transition: var(--transition);
+            transform: translateZ(20px);
+            text-align: left;
         }
         
         .meta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px) translateZ(20px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
         }
         
         .meta strong {
@@ -175,10 +217,12 @@
         }
         
         .tag {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             background: rgba(255, 255, 255, 0.15);
             color: white;
-            padding: 0.7rem 1.3rem;
+            padding: 0.7rem 1.4rem;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -186,12 +230,17 @@
             transition: var(--transition);
             text-transform: uppercase;
             border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
         .tag:hover {
             background: rgba(255, 255, 255, 0.25);
             transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tag i {
+            font-size: 0.9em;
         }
         
         .scroll-indicator {
@@ -210,7 +259,7 @@
             align-items: center;
             justify-content: center;
             background: var(--glass-bg);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
             border-radius: 50%;
             border: 1px solid var(--glass-border);
             transition: var(--transition);
@@ -229,23 +278,37 @@
                 transform: translateY(-15px) translateX(-50%);
             }
             60% {
-                transform: translateY(-7px) translateX(-50%);
+                transform: translateY(-8px) translateX(-50%);
             }
         }
         
-        /* Content Sections */
+        /* Main Content Styles */
         .section {
             background: var(--card-bg);
             border-radius: var(--border-radius);
             padding: 2.5rem;
-            margin-bottom: 2.5rem;
+            margin: 3rem 0;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            border-left: 4px solid var(--secondary-color);
+            border-left: 5px solid var(--secondary-color);
+            animation: fadeIn 0.6s ease-out forwards;
+            position: relative;
+            overflow: hidden;
         }
         
-        .section:hover {
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--secondary-color);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         h2 {
@@ -256,6 +319,7 @@
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 0.8rem;
+            text-align: left;
         }
         
         h2::after {
@@ -263,20 +327,52 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            height: 3px;
+            height: 4px;
             width: 50px;
             background: var(--accent-color);
             border-radius: 3px;
         }
         
+        h3 {
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            text-align: justify;
+            hyphens: auto;
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            text-align: left;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            text-align: left;
+        }
+        
+        strong {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
             font-size: 0.95rem;
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+            box-shadow: 0 0 20px rgba(0,0,0,0.08);
         }
         
         th, td {
@@ -288,7 +384,7 @@
         th {
             background-color: var(--primary-color);
             color: white;
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 0.5px;
@@ -299,53 +395,86 @@
         }
         
         tr:hover {
-            background-color: #f0f7ff;
+            background-color: var(--secondary-light);
         }
         
         .up-arrow {
-            color: #27ae60;
+            color: var(--success-color);
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .up-arrow::before {
+            content: "▲";
+            font-size: 0.8em;
         }
         
         .down-arrow {
-            color: #e74c3c;
+            color: var(--danger-color);
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .down-arrow::before {
+            content: "▼";
+            font-size: 0.8em;
         }
         
         .neutral {
             color: var(--light-text);
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .neutral::before {
+            content: "●";
+            font-size: 0.8em;
         }
         
         .highlight {
             background: #f8fafc;
-            border-left: 4px solid var(--secondary-color);
+            border-left: 5px solid var(--secondary-color);
             padding: 2rem;
             border-radius: var(--border-radius);
             margin: 2rem 0;
             position: relative;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .highlight:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
         }
         
         .highlight h2 {
             margin-top: 0;
             color: var(--primary-color);
+            font-size: 1.6rem;
         }
         
         .image-container {
-            margin: 1.5rem 0;
+            margin: 2rem 0;
             text-align: center;
         }
         
         .image-container img {
             max-width: 100%;
             border-radius: var(--border-radius);
+            border: 1px solid rgba(0,0,0,0.08);
             box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
         
         .image-container img:hover {
             transform: scale(1.02);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
         
         .image-caption {
@@ -358,13 +487,19 @@
         
         .callout {
             background: linear-gradient(to right, #f0f7ff, #e6f2ff);
-            border-left: 4px solid var(--secondary-color);
+            border-left: 5px solid var(--secondary-color);
             padding: 1.5rem;
             border-radius: var(--border-radius);
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             font-size: 1rem;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+        
+        .callout:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
         }
         
         .callout::before {
@@ -379,42 +514,55 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
             font-size: 1rem;
+            z-index: 1;
         }
         
         .callout strong {
             color: var(--secondary-color);
-            font-weight: 600;
+            font-weight: 700;
         }
         
         .grade-card {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
-            margin: 2.5rem 0;
+            margin: 3rem 0;
             justify-content: center;
         }
         
         .grade-item {
             flex: 1;
-            min-width: 220px;
+            min-width: 200px;
             background: var(--card-bg);
             padding: 2rem;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
             transition: var(--transition);
-            border-top: 3px solid var(--secondary-color);
+            border-top: 4px solid var(--secondary-color);
+            position: relative;
+            overflow: hidden;
         }
         
         .grade-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .grade-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-color);
         }
         
         .grade-title {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 0.8rem;
             font-size: 1.1rem;
@@ -431,42 +579,41 @@
         .verdict {
             background: var(--gradient);
             color: white;
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: var(--border-radius);
             text-align: center;
             font-size: 1.2rem;
             font-style: italic;
-            margin: 2.5rem 0;
+            margin: 3rem 0;
             box-shadow: var(--box-shadow);
             position: relative;
             overflow: hidden;
+            line-height: 1.8;
         }
         
         .verdict::before {
-            content: """;
+            content: "";
             position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 4rem;
-            color: rgba(255,255,255,0.1);
-            font-family: serif;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
         }
         
-        .verdict::after {
-            content: """;
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            font-size: 4rem;
-            color: rgba(255,255,255,0.1);
-            font-family: serif;
+        .verdict-content {
+            position: relative;
+            z-index: 1;
         }
         
         .conclusion {
             font-size: 1.1rem;
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
             color: var(--text-color);
+            text-align: justify;
         }
         
         .question {
@@ -474,18 +621,24 @@
             padding: 2rem;
             border-radius: var(--border-radius);
             text-align: center;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary-color);
-            margin: 2.5rem 0;
+            margin: 3rem 0;
             box-shadow: var(--box-shadow);
             border: 1px solid rgba(0,0,0,0.05);
             font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .question:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
         }
         
         .divider {
             height: 1px;
             background: linear-gradient(to right, transparent, #e0e6ed, transparent);
-            margin: 2.5rem 0;
+            margin: 3rem 0;
             position: relative;
         }
         
@@ -496,7 +649,7 @@
             top: 50%;
             transform: translate(-50%, -50%);
             background: var(--bg-color);
-            padding: 0 1rem;
+            padding: 0 1.5rem;
             color: var(--light-text);
             font-size: 1rem;
         }
@@ -505,41 +658,64 @@
             display: flex;
             align-items: center;
             background: var(--card-bg);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: var(--border-radius);
-            margin-top: 3rem;
+            margin: 4rem 0;
             box-shadow: var(--box-shadow);
             border: 1px solid rgba(0,0,0,0.05);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
         
         .author-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .author-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--secondary-color);
         }
         
         .author-avatar {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 2rem;
-            border: 3px solid var(--secondary-color);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 4px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .author-box:hover .author-avatar {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
         
         .author-info h3 {
             margin-top: 0;
             margin-bottom: 0.5rem;
             color: var(--primary-color);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
         
         .author-info p {
             margin: 0.5rem 0;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
+            text-align: left;
+        }
+        
+        .author-info strong {
+            color: var(--primary-dark);
         }
         
         .back-to-top {
@@ -555,11 +731,13 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             transition: var(--transition);
             opacity: 0;
             visibility: hidden;
             z-index: 100;
+            border: none;
+            outline: none;
         }
         
         .back-to-top.visible {
@@ -569,41 +747,203 @@
         
         .back-to-top:hover {
             background: var(--accent-color);
-            transform: translateY(-3px);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 12px 25px rgba(220, 53, 69, 0.3);
         }
         
-        /* Floating elements animation */
-        .floating-elements {
+        /* Back to Home Button Styles */
+        .back-to-home-container {
+            text-align: center;
+            margin: 3rem 0;
+            animation: fadeIn 0.6s ease-out forwards;
+            animation-delay: 0.7s;
+        }
+
+        .back-to-home-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2.2rem;
+            background: var(--gradient);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .back-to-home-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(26, 58, 90, 0.25);
+            background: linear-gradient(135deg, #1a3a5a 0%, #2c5282 120%);
+        }
+
+        .back-to-home-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-home-button:hover i {
+            transform: translateX(-5px);
+        }
+
+        .back-to-home-button::after {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .back-to-home-button:hover::after {
+            transform: translateX(100%);
+        }
+
+        /* Opinion Box Styles */
+        .opinion-box {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            box-shadow: var(--box-shadow);
+            border-top: 4px solid var(--accent-color);
+            transition: var(--transition);
+            position: relative;
             overflow: hidden;
-            z-index: 1;
         }
-        
-        .floating-element {
+
+        .opinion-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .opinion-box h3 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid #e0e6ed;
+            border-radius: var(--border-radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: #f8fafc;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
+            background: white;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-opinion {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.2);
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-opinion:hover {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff7a4d 120%);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .submit-opinion i {
+            transition: transform 0.3s ease;
+        }
+
+        .submit-opinion:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Tooltip styles */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--primary-dark);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
             position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            backdrop-filter: blur(2px);
-            animation: float 15s infinite linear;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.8rem;
+            font-weight: normal;
         }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            100% {
-                transform: translateY(-1000px) rotate(720deg);
-            }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
         }
-        
+
         /* Responsive adjustments */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
             .header {
-                padding: 4rem 1.5rem;
+                padding: 5rem 1.5rem;
                 min-height: 70vh;
                 clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
             }
@@ -613,7 +953,7 @@
             }
             
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .subtitle {
@@ -626,17 +966,38 @@
             }
             
             .section, .highlight {
+                padding: 2rem;
+            }
+            
+            .highlight img {
+                float: none !important;
+                width: 100% !important;
+                margin: 1.5rem 0 !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 4rem 1rem;
+                min-height: 60vh;
+            }
+            
+            .header-content {
                 padding: 1.5rem;
             }
             
-            .grade-card {
-                flex-direction: column;
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
             }
             
             .author-box {
                 flex-direction: column;
                 text-align: center;
-                padding: 1.5rem;
+                padding: 2rem;
             }
             
             .author-avatar {
@@ -644,21 +1005,118 @@
                 margin-bottom: 1.5rem;
             }
             
-            .highlight img {
-                float: none !important;
-                width: 100% !important;
-                margin: 1rem 0 !important;
+            .grade-item {
+                min-width: 100%;
+            }
+            
+            .section, .highlight, .opinion-box {
+                padding: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .verdict {
+                padding: 2rem;
+                font-size: 1.1rem;
             }
         }
-        
-        /* Animation for sections */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 576px) {
+            .header {
+                padding: 3rem 1rem;
+                min-height: 50vh;
+                clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .meta {
+                text-align: left;
+                width: 100%;
+            }
+            
+            .tags {
+                justify-content: flex-start;
+            }
+            
+            .tag {
+                padding: 0.6rem 1rem;
+                font-size: 0.75rem;
+            }
+            
+            .back-to-home-button {
+                width: 100%;
+                justify-content: center;
+            }
         }
-        
-        .section, .highlight, .question, .author-box {
-            animation: fadeIn 0.6s ease-out forwards;
+
+        /* Animation for interactive elements */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .interactive {
+            animation: pulse 2s infinite;
+            cursor: pointer;
+        }
+
+        /* Enhanced table styling */
+        table {
+            position: relative;
+        }
+
+        table::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 95%, var(--bg-color) 100%);
+            pointer-events: none;
+        }
+
+        table:hover::after {
+            opacity: 0;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+
+        /* Floating animation for key elements */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -667,13 +1125,6 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="floating-elements">
-                <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 10%; animation-duration: 20s;"></div>
-                <div class="floating-element" style="width: 150px; height: 150px; top: 60%; left: 70%; animation-duration: 25s;"></div>
-                <div class="floating-element" style="width: 80px; height: 80px; top: 30%; left: 80%; animation-duration: 18s;"></div>
-                <div class="floating-element" style="width: 120px; height: 120px; top: 70%; left: 20%; animation-duration: 22s;"></div>
-            </div>
-            
             <div class="header-content">
                 <h1>Surplus Under Pressure: Sri Lanka's External Sector Defies the Odds</h1>
                 <div class="subtitle">"In uncertain global waters, Sri Lanka's external sector sails steady — powered by remittances, tourism, and disciplined macro strategy."</div>
@@ -691,7 +1142,8 @@
                     <span class="tag"><i class="fas fa-rocket"></i> Development</span>
                 </div>
             </div>
-            <div class="scroll-indicator" onclick="document.querySelector('.section').scrollIntoView({behavior: 'smooth'})">
+
+            <div class="scroll-indicator floating" onclick="document.querySelector('.section').scrollIntoView({behavior: 'smooth'})">
                 <i class="fas fa-chevron-down"></i>
             </div>
         </div>
@@ -707,66 +1159,71 @@
                 <tr>
                     <td>Current Account Surplus</td>
                     <td>USD 190.6 mn</td>
-                    <td class="up-arrow">🔼 +29.0%</td>
+                    <td class="up-arrow">+29.0%</td>
                 </tr>
                 <tr>
                     <td>Merchandise Trade Deficit</td>
                     <td>USD 472.5 mn</td>
-                    <td class="up-arrow">🔼 Wider by 20.2%</td>
+                    <td class="up-arrow">Wider by 20.2%</td>
                 </tr>
                 <tr>
                     <td>Exports (Goods)</td>
                     <td>USD 1,034.7 mn</td>
-                    <td class="up-arrow">🔼 +2.3%</td>
+                    <td class="up-arrow">+2.3%</td>
                 </tr>
                 <tr>
                     <td>Imports (Goods)</td>
                     <td>USD 1,507.2 mn</td>
-                    <td class="up-arrow">🔼 +7.3%</td>
+                    <td class="up-arrow">+7.3%</td>
                 </tr>
                 <tr>
                     <td>Tourist Arrivals</td>
                     <td>132,919</td>
-                    <td class="up-arrow">🔼 +18.5%</td>
+                    <td class="up-arrow">+18.5%</td>
                 </tr>
                 <tr>
                     <td>Tourism Earnings</td>
                     <td>USD 164.1 mn</td>
-                    <td class="up-arrow">🔼 +6.6%</td>
+                    <td class="up-arrow">+6.6%</td>
                 </tr>
                 <tr>
                     <td>Workers' Remittances</td>
                     <td>USD 641.7 mn</td>
-                    <td class="up-arrow">🔼 +17.9%</td>
+                    <td class="up-arrow">+17.9%</td>
                 </tr>
                 <tr>
                     <td>Gross Official Reserves</td>
                     <td>USD 6.3 bn</td>
-                    <td class="neutral">➖ Stable</td>
+                    <td class="neutral">Stable</td>
                 </tr>
                 <tr>
                     <td>Exchange Rate (LKR/USD)</td>
                     <td>LKR 299.97</td>
-                    <td class="down-arrow">🔻 -2.5% depreciation YTD</td>
+                    <td class="down-arrow">-2.5% depreciation YTD</td>
                 </tr>
             </table>
 
             <div class="image-container" style="text-align: center; padding: 1rem;">
-                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-size: 2rem; color: #004080;">
-                    <div title="Trade Balance">
-                        <i class="fas fa-scale-balanced"></i><br><span style="font-size: 0.8rem;">Trade</span>
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 1.8rem; color: #004080;">
+                    <div class="tooltip" title="Trade Balance">
+                        <i class="fas fa-scale-balanced interactive"></i><br><span style="font-size: 0.75rem;">Trade</span>
+                        <span class="tooltiptext">Measures the difference between exports and imports of goods</span>
                     </div>
-                    <div title="Worker Remittances">
-                        <i class="fas fa-money-bill-transfer"></i><br><span style="font-size: 0.8rem;">Remittances</span>
+                    <div class="tooltip" title="Worker Remittances">
+                        <i class="fas fa-money-bill-transfer interactive"></i><br><span style="font-size: 0.75rem;">Remittances</span>
+                        <span class="tooltiptext">Money sent home by Sri Lankans working abroad</span>
                     </div>
-                    <div title="Tourism Revenue">
-                        <i class="fas fa-plane-departure"></i><br><span style="font-size: 0.8rem;">Tourism</span>
+                    <div class="tooltip" title="Tourism Revenue">
+                        <i class="fas fa-plane-departure interactive"></i><br><span style="font-size: 0.75rem;">Tourism</span>
+                        <span class="tooltiptext">Earnings from international visitors to Sri Lanka</span>
                     </div>
-                    <div title="Foreign Reserves">
-                        <i class="fas fa-piggy-bank"></i><br><span style="font-size: 0.8rem;">Reserves</span>
+                    <div class="tooltip" title="Foreign Reserves">
+                        <i class="fas fa-piggy-bank interactive"></i><br><span style="font-size: 0.75rem;">Reserves</span>
+                        <span class="tooltiptext">Foreign currency held by the Central Bank</span>
                     </div>
-                    <div title="Growth & Stability">
-                        <i class="fas fa-chart-line"></i><br><span style="font-size: 0.8rem;">Growth</span>
+                    <div class="tooltip" title="Growth & Stability">
+                        <i class="fas fa-chart-line interactive"></i><br><span style="font-size: 0.75rem;">Growth</span>
+                        <span class="tooltiptext">Economic performance indicators</span>
                     </div>
                 </div>
             </div>
@@ -781,8 +1238,8 @@
             
             <div class="highlight">
                 <h2>🔄 Balance of Payments (BOP) Rebalancing in Action</h2>
-                <div class="image-container" style="float: right; width: 40%; margin-left: 20px;">
-                    <img src="http://www.sundaytimes.lk/170319/uploads/Econ-Cartoon2.jpg" alt="Balance scales">
+                <div class="image-container" style="float: right; width: 35%; margin-left: 20px;">
+                    <img src="http://www.sundaytimes.lk/170319/uploads/Econ-Cartoon2.jpg" alt="Balance scales" style="border: 2px solid rgba(0,0,0,0.05);">
                     <div class="image-caption">(Image: SUNDAY TIMES)</div>
                 </div>
                 <p>From an IFM perspective, the balance of payments (BOP) is the central framework to evaluate a country's international economic position. For Sri Lanka, the continuation of monthly current account surpluses in 2025—despite a growing merchandise trade deficit—signals a significant shift in how the country is adjusting its external sector dynamics.</p>
@@ -799,8 +1256,8 @@
 
             <div class="highlight">
                 <h2>💱 Exchange Rate Dynamics & Foreign Exchange Policy</h2>
-                <div class="image-container" style="float: left; width: 40%; margin-right: 20px;">
-                    <img src="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.dailymirror.lk/media/images/image_1482815647-0ccb49aa7b.jpg" alt="Currency exchange">
+                <div class="image-container" style="float: left; width: 35%; margin-right: 20px;">
+                    <img src="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.dailymirror.lk/media/images/image_1482815647-0ccb49aa7b.jpg" alt="Currency exchange" style="border: 2px solid rgba(0,0,0,0.05);">
                     <div class="image-caption">(IMAGE:SUNDAY TIMES)</div>
                 </div>
                 <p>The Sri Lankan rupee depreciated by 2.5% YTD against the US dollar, a modest movement suggesting exchange rate flexibility under a managed float regime.</p>
@@ -819,9 +1276,9 @@
 
             <div class="highlight">
                 <h2>🌍 International Trade: Recovery vs Structural Dependence</h2>
-                <div class="image-container">
-                    <img src="https://xaubot.com/wp-content/uploads/2023/04/international-trade.webp" alt="">
-                    <div class="image-caption"> (Image:XAUBOT)</div>
+                <div class="image-container" style="float: right; width: 35%; margin-left: 20px;">
+                    <img src="https://xaubot.com/wp-content/uploads/2023/04/international-trade.webp" alt="Balance scales" style="border: 2px solid rgba(0,0,0,0.05);">
+                    <div class="image-caption">(Image: SUNDAY TIMES)</div>
                 </div>
                 <p>While both exports and imports rose YoY (↑2.3% and ↑7.3%, respectively), the gap between them widened — reflecting a deeper trade imbalance and import reliance.</p>
                 <p><strong>Key Points:</strong></p>
@@ -847,8 +1304,8 @@
             <div class="highlight">
                 <h2>🧳 Tourism & Remittances: Resilient Buffers Against External Shocks</h2>
                 <div class="image-container" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 250px;">
-                        <img src="https://www.travelvoice.lk/wp-content/uploads/2025/03/TV-web-25-march-16-ii.png" alt="Sri Lanka tourism">
+                    <div style="flex: 1; min-width: 220px;">
+                        <img src="https://www.travelvoice.lk/wp-content/uploads/2025/03/TV-web-25-march-16-ii.png" alt="Sri Lanka tourism" style="border: 2px solid rgba(0,0,0,0.05);">
                         <div class="image-caption">Tourist arrivals rebounding (Image: Travel voice )</div>
                     </div>
                 </div>
@@ -878,7 +1335,7 @@
             <div class="highlight">
                 <h2>📉 Capital Markets: Signs of Confidence with Caveats</h2>
                 <div class="image-container">
-                    <img src="https://www.livemint.com/lm-img/img/2024/09/23/600x338/Nifty_1667546435835_1727095720493.jpg" alt="Stock market">
+                    <img src="https://www.livemint.com/lm-img/img/2024/09/23/600x338/Nifty_1667546435835_1727095720493.jpg" alt="Stock market" style="border: 2px solid rgba(0,0,0,0.05);">
                     <div class="image-caption">Taming behaviour in the face of an untamed index(Image: Unsplash)</div>
                 </div>
                 <p>May 2025 showed a small but significant net inflow of USD 2.1 mn into capital markets:</p>
@@ -924,8 +1381,25 @@
                     <div>More needed</div>
                 </div>
             </div>
+        </div>
+            
+        <!-- Opinion Submission Box -->
+        <div class="opinion-box">
             <p class="question">What's your take?<br>
             Is Sri Lanka's recovery sustainable, or are we seeing a temporary bounce?</p>
+            <form id="opinionForm">
+                <div class="form-group">
+                    <label for="userName">Your Name (Optional)</label>
+                    <input type="text" id="userName" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="userOpinion">Your Opinion*</label>
+                    <textarea id="userOpinion" rows="4" placeholder="Share your thoughts on Sri Lanka's economic recovery..." required></textarea>
+                </div>
+                <button type="submit" class="submit-opinion">
+                    <i class="fas fa-paper-plane"></i> Submit Opinion
+                </button>
+            </form>
         </div>
 
         <div class="author-box">
@@ -935,6 +1409,13 @@
                 <p><strong>Dr. Anjali Perera</strong> is an economist specializing in emerging market macroeconomics with over 15 years of experience analyzing South Asian economies. She serves as a senior research fellow at the Colombo Institute of Economic Policy.</p>
                 <p>Connect with her on Twitter @EconAnjali</p>
             </div>
+        </div>
+
+        <!-- Back to Home Button Division -->
+        <div class="back-to-home-container">
+            <a href="index.html" class="back-to-home-button">
+                <i class="fas fa-arrow-left"></i> Return to Homepage
+            </a>
         </div>
     </div>
 
@@ -960,6 +1441,62 @@
                 behavior: 'smooth'
             });
         });
+
+        // Form submission handling
+        const opinionForm = document.getElementById('opinionForm');
+        opinionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const opinion = document.getElementById('userOpinion').value;
+            const name = document.getElementById('userName').value || 'Anonymous';
+            
+            // Here you would typically send the data to a server
+            console.log(`New opinion from ${name}: ${opinion}`);
+            
+            // Show a confirmation to the user
+            alert('Thank you for sharing your opinion!');
+            opinionForm.reset();
+        });
+
+        // Add animation to elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.section, .highlight, .callout');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.animation = 'fadeIn 0.6s ease-out forwards';
+                }
+            });
+        };
+
+        // Add interactive hover effects to table rows
+        const tableRows = document.querySelectorAll('tr');
+        tableRows.forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'scale(1.01)';
+                row.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'scale(1)';
+                row.style.boxShadow = 'none';
+            });
+        });
+
+        // Add click effect to interactive icons
+        const interactiveIcons = document.querySelectorAll('.interactive');
+        interactiveIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                icon.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    icon.style.transform = 'scale(1)';
+                }, 300);
+            });
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
